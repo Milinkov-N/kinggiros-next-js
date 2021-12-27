@@ -7,42 +7,42 @@ export default function Nav() {
   return (
     <nav className={ styles.navigation } ref={el => {
       if (!el) return
-      fixOnScroll(el)
+      // fixOnScroll(el)
     }}>
       <Container className={ styles.container }>
         <ul className={ styles.navigationList }>
           <li>
-            <Link href='/categories'>
+            <Link href='/#shaurma'>
               <a className={ styles.link }>Шаурма</a>
             </Link>
           </li>
           <li>
-            <Link href='/categories'>
+            <Link href='/#shaurma'>
               <a className={ styles.link }>Пицца</a>
             </Link>
           </li>
           <li>
-            <Link href='/categories'>
+            <Link href='/#shaurma'>
               <a className={ styles.link }>Чебуреки</a>
             </Link>
           </li>
           <li>
-            <Link href='/categories'>
+            <Link href='/#shaurma'>
               <a className={ styles.link }>Напитки</a>
             </Link>
           </li>
           <li>
-            <Link href='/categories'>
+            <Link href='/#shaurma'>
               <a className={ styles.link }>Закуски</a>
             </Link>
           </li>
           <li>
-            <Link href='/categories'>
+            <Link href='/#shaurma'>
               <a className={ styles.link }>Добавки</a>
             </Link>
           </li>
           <li>
-            <Link href='/categories'>
+            <Link href='/#shaurma'>
               <a className={ styles.link }>Вкусняшки</a>
             </Link>
           </li>

@@ -26,26 +26,3 @@ a {
   padding: 0 50px;
   margin: 0 auto;
 }
-
-.btn {
-  display: block;
-  font-family: var(--ff-pf-square);
-  font-size: 1rem;
-  font-weight: 500;
-  background: #fff;
-  border: none;
-  border-radius: 6px;
-  padding: .4em 1em;
-  cursor: pointer;
-  transition: .15s background ease;
-}
-
-.btn:hover,
-.btn:focus {
-  background: #e4e4e4;
-}
-
-.btn-large {
-  font-size: 1.15rem;
-  padding: .75em 1.5em;
-}

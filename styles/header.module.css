@@ -57,15 +57,7 @@
 .controls {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   gap: 1rem;
   grid-area: controls;
-}
-
-.cart {
-  margin-left: auto;
-}
-
-.cart span {
-  font-weight: 500;
-  margin-left: .5em;
 }

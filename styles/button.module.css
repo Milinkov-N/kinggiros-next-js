@@ -1,0 +1,53 @@
+.btn {
+  display: block;
+  font-family: var(--ff-pf-square);
+  font-weight: 500;
+  background: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: .15s all ease;
+}
+
+.btn:hover,
+.btn:focus {
+  background: #e4e4e4;
+}
+
+.btn-small {
+  font-size: 1rem;
+  padding: .4em 1em;
+}
+
+.btn-large {
+  font-size: 1.15rem;
+  padding: .75em 1.5em;
+}
+
+.btn-white {
+  background: #fff;
+}
+
+.btn-primary {
+  background: var(--clr-primary-400);
+  color: #fff;
+}
+
+.btn-secondary {
+  background: var(--clr-secondary-400);
+  color: rgb(41, 41, 41);
+}
+
+.btn-secondary:hover {
+  background: var(--clr-secondary-400);
+  opacity: .8;
+}
+
+.cart {
+  margin-left: auto;
+}
+
+.cart span {
+  font-weight: 500;
+  margin-left: .5em;
+}

@@ -1,20 +1,39 @@
-import styles from '../styles/header.module.css'
+import Link from 'next/link'
+import Head from 'next/head'
+import styles from '../styles/button.module.css'
 
-const ButtonSmall = ({ label }) => {
-  return <button className="btn btn-small">{ label }</button>
-}
+const Button = ({ label, size, color }) => {
+  let btnClass = [ styles.btn ]
 
-const ButtonLarge = ({ label }) => {
-  return <button className="btn btn-large">{ label }</button>
+  if (size) {
+    const selector = `btn-${size}`
+    btnClass.push(styles[selector])
+  }
+
+  if (color) {
+    const selector = `btn-${color}`
+    btnClass.push(styles[selector])
+  }
+
+  btnClass = btnClass.join(' ')
+
+  return <button className={ btnClass }>{ label }</button>
 }
 
 const Cart = () => {
   return (
-    <a href="/" className={ styles.cart }>
-      <i aria-hidden className="fas fa-shopping-cart"></i>
-      <span>450 RUB</span>
-    </a>
+    <>
+      <Head>
+        <script src="https://kit.fontawesome.com/85b1b8f8c9.js" crossorigin="anonymous"></script>
+      </Head>
+      <Link href="/">
+        <a className={ styles.cart }>
+          <i aria-hidden className="fas fa-shopping-cart"></i>
+          <span>450 RUB</span>
+        </a>
+      </Link>
+    </>
   )
 }
 
-export { ButtonSmall, ButtonLarge, Cart }
+export { Button, Cart }

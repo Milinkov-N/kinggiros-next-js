@@ -1,7 +1,7 @@
 import styles from '../styles/header.module.css'
 import logoImg from '../public/logo.png'
 import Container from './Container'
-import { ButtonSmall, Cart } from './Button'
+import { Button, Cart } from './Button'
 
 const Title = () => {
   return (
@@ -34,9 +34,11 @@ const Delivery = () => {
 const Controls = () => {
   return (
     <div className={ styles.controls }>
-      <Cart />
-      <div className="separator"></div>
-      <ButtonSmall label="Войти" />
+      <Button
+        label='Войти'
+        size='small'
+        color='white'
+      />
     </div>
   )
 }
