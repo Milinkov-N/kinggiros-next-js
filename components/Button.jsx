@@ -1,19 +1,14 @@
 import Link from 'next/link'
-import Head from 'next/head'
 import styles from '../styles/button.module.css'
 
 const Button = ({ label, size, color }) => {
   let btnClass = [ styles.btn ]
+  const sizeSelector = `btn-${size}`
+  const colorSelector = `btn-${color}`
 
-  if (size) {
-    const selector = `btn-${size}`
-    btnClass.push(styles[selector])
-  }
+  size ? btnClass.push(styles[sizeSelector]) : btnClass.push(styles['btn-medium'])
 
-  if (color) {
-    const selector = `btn-${color}`
-    btnClass.push(styles[selector])
-  }
+  color ? btnClass.push(styles[colorSelector]) : btnClass.push(styles['btn-white'])
 
   btnClass = btnClass.join(' ')
 
@@ -21,18 +16,13 @@ const Button = ({ label, size, color }) => {
 }
 
 const Cart = () => {
-  return (
-    <>
-      <Head>
-        <script src="https://kit.fontawesome.com/85b1b8f8c9.js" crossorigin="anonymous"></script>
-      </Head>
-      <Link href="/">
-        <a className={ styles.cart }>
-          <i aria-hidden className="fas fa-shopping-cart"></i>
-          <span>450 RUB</span>
-        </a>
-      </Link>
-    </>
+  return (   
+    <Link href="/">
+      <a className={ styles.cart }>
+        <i aria-hidden className="fas fa-shopping-cart"></i>
+        <span>450 RUB</span>
+      </a>
+    </Link>
   )
 }
 

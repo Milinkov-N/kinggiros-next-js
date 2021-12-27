@@ -1,8 +1,8 @@
 import Head from 'next/head'
 import Layout from '../components/Layout'
 import Hero from '../components/Hero'
-
 import logo from '../public/logo_icon.png'
+import CollectionList from '../components/CollectionList'
 
 export default function Home() {
   return (
@@ -14,6 +14,7 @@ export default function Home() {
       </Head>
       <Layout>
         <Hero />
+        <CollectionList />
       </Layout>
     </>
     

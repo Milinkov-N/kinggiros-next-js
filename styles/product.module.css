@@ -1,0 +1,40 @@
+.product {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.link:hover .imgWrapper {
+  transform: translateY(-5px);
+}
+
+.link:hover .title {
+  color: var(--clr-secondary-400);
+}
+
+.imgWrapper {
+  border-radius: 10px;
+  transition: .2s transform ease;
+}
+
+.title {
+  font-size: 1.375rem;
+  font-weight: 500;
+  margin-top: .5em;
+  margin-bottom: .75em;
+  transition: .2s color ease;
+}
+
+.description {
+  color: #555;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.25rem;
+  font-weight: 500;
+  padding-top: 1.25rem;
+  margin-top: auto;
+}

@@ -19,6 +19,11 @@
   padding: .4em 1em;
 }
 
+.btn-medium {
+  font-size: 1rem;
+  padding: .6em 1.25em;
+}
+
 .btn-large {
   font-size: 1.15rem;
   padding: .75em 1.5em;
@@ -26,6 +31,11 @@
 
 .btn-white {
   background: #fff;
+}
+
+.btn-black {
+  background: #000;
+  color: #fff;
 }
 
 .btn-primary {

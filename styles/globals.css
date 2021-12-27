@@ -8,6 +8,7 @@
 html,
 body {
   font-family: var(--ff-pf-square);
+  scroll-behavior: smooth;
 }
 
 a {
