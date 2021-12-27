@@ -1,0 +1,40 @@
+.navigation {
+  padding: 1.5rem 0;
+  z-index: 1000;
+  background: rgba( 255 255 255 / .5);
+}
+
+@supports(backdrop-filter: blur(6px)) {
+  .navigation {
+    backdrop-filter: blur(6px);
+  }
+}
+
+.navFixed {
+  position: sticky;
+  top: 0px;
+  border-bottom: 1px solid #e7e7e7;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.navigationList {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  font-weight: 500;
+}
+
+.link {
+  padding: .5em 0;
+  transition: .15s color ease;
+}
+
+.link:hover,
+.link:focus {
+  color: var(--clr-secondary-400);
+}

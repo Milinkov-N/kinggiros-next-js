@@ -1,0 +1,54 @@
+.hero {
+  position: relative;
+  height: 60vh;
+  text-align: center;
+}
+
+.bgImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  overflow: hidden;
+  height: inherit;
+}
+
+.bgImage::after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: inherit;
+  background: #00000075;
+  backdrop-filter: blur(6px);
+}
+
+.container {
+  position: relative;
+  color: #fff;
+  padding-top: 20vh;
+}
+
+.title {
+  font-size: 3.25rem;
+}
+
+.title span {
+  color: var(--clr-primary-400);
+}
+
+.subtitle {
+  font-size: 1.125rem;
+  font-weight: 500;
+  max-width: 40em;
+  margin: 0 auto; 
+  margin-top: .75em;
+  color: #fff;
+}
+
+.hero .container > button {
+  margin: 0 auto;
+  margin-top: 2rem;
+}
