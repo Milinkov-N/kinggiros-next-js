@@ -7,7 +7,7 @@ export default function Nav() {
   return (
     <nav className={ styles.navigation } ref={el => {
       if (!el) return
-      // fixOnScroll(el)
+      fixOnScroll(el)
     }}>
       <Container className={ styles.container }>
         <ul className={ styles.navigationList }>
@@ -19,6 +19,11 @@ export default function Nav() {
           <li>
             <Link href='/#shaurma'>
               <a className={ styles.link }>Пицца</a>
+            </Link>
+          </li>
+          <li>
+            <Link href='/#shaurma'>
+              <a className={ styles.link }>Бургеры</a>
             </Link>
           </li>
           <li>

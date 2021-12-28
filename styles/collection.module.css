@@ -17,7 +17,11 @@
 }
 
 .title:hover span::before {
-  display: block;
+  opacity: 1;
+}
+
+.title span::before:hover {
+  opacity: 1;
 }
 
 .title span {
@@ -28,21 +32,24 @@
   font-family: 'Font Awesome 5 Free';
   font-size: 1rem;
   font-weight: 900;
+  color: #a5a5a5;
   content: '\f0c1';
-  display: none;
+  display: block;
   position: absolute;
   top: 50%;
   left: -1.75rem;
   transform: translateY(-50%);
+  padding-right: 1.75rem;
+  opacity: 0;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1124px) {
   .grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 875px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
   }
