@@ -1,7 +1,7 @@
-import style from '../styles/hero.module.css'
+import style from './hero.module.css'
 import Image from 'next/image'
 import Container from './Container'
-import { Button } from './Button'
+import { Button } from './ui/Button'
 import heroImg from '../public/hero.jpg'
 
 export default function Hero() {

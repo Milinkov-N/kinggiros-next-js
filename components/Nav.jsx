@@ -1,7 +1,7 @@
 import Link from 'next/link'
-import styles from '../styles/nav.module.css'
+import styles from './nav.module.css'
 import Container from './Container'
-import { Cart } from './Button'
+import { Cart } from './ui/Button'
 
 export default function Nav() {
   return (

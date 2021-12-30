@@ -1,0 +1,57 @@
+.header {
+  width: 100%;
+  padding: 1rem 0;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  font-size: 1.875rem;
+  font-weight: 500;
+}
+
+.btnWrapper {
+  margin-left: auto;
+}
+
+.delivery {
+  display: flex;
+  flex-direction: column;
+  gap: .25rem;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-left: 3rem;
+}
+
+.delivery p span {
+  color: var(--clr-secondary-400);
+}
+
+.delivery a {
+  font-size: .875rem;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.phone {
+  display: flex;
+  gap: .5rem;
+}
+
+.iconWrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 18px;
+  height: 18px;
+  background: #000;
+  border-radius: 50%;
+  font-size: .55rem;
+  color: var(--clr-secondary-400);
+}

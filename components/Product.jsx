@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { Button } from './Button'
-import styles from '../styles/product.module.css'
+import { Button } from './ui/Button'
+import styles from './product.module.css'
 
 export default function Product({ data }) {
 
@@ -48,7 +48,7 @@ export default function Product({ data }) {
 const getProductComposition = ( description ) => {
   const keyWord = 'Состав:'
 
-  compositionIndex = description.indexOf(keyWord) + keyWord.length
+  const compositionIndex = description.indexOf(keyWord) + keyWord.length
 
   const substring = description.slice(compositionIndex)
 

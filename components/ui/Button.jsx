@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import styles from '../styles/button.module.css'
+import styles from './button.module.css'
 
 const Button = ({ label, size, color }) => {
   let btnClass = [ styles.btn ]

@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Container from './Container'
 import Product from './Product'
-import styles from '../styles/collection.module.css'
+import styles from './collection.module.css'
 
 export default function CollectionList({ products }) {
   return (
