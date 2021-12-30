@@ -2,74 +2,21 @@ import Link from 'next/link'
 import Container from './Container'
 import Product from './Product'
 import styles from '../styles/collection.module.css'
-import hotDogImg from '../public/hotdog.png'
 
-export default function CollectionList() {
-  const data = [
-    {
-      title: 'Хотдог супер-пупер-дупер-острый',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit sint hic, assumenda fugiat illum nemo.',
-      handler: '/categories',
-      imageSrc: hotDogImg,
-      price: '135',
-      tags: [ 'spicy', 'spicy', 'spicy', 'spicy', 'vegetarian' ]
-    },
-    {
-      title: 'Хотдог острый',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit sint hic, assumenda fugiat illum nemo.',
-      handler: '/categories',
-      imageSrc: hotDogImg,
-      price: '1 350',
-      tags: [ 'spicy', 'vegetarian' ]
-    },
-    {
-      title: 'Хотдог острый',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit sint hic, assumenda fugiat illum nemo.',
-      handler: '/categories',
-      imageSrc: hotDogImg,
-      price: '135',
-      tags: [ 'spicy', 'vegetarian' ]
-    },
-    {
-      title: 'Хотдог острый',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit sint hic, assumenda fugiat illum nemo.',
-      handler: '/categories',
-      imageSrc: hotDogImg,
-      price: '135',
-      tags: [ 'spicy', 'vegetarian' ]
-    },
-    {
-      title: 'Хотдог острый',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit sint hic, assumenda fugiat illum nemo.',
-      handler: '/categories',
-      imageSrc: hotDogImg,
-      price: '135',
-      tags: [ 'spicy', 'vegetarian' ]
-    },
-    {
-      title: 'Хотдог острый',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit sint hic, assumenda fugiat illum nemo.',
-      handler: '/categories',
-      imageSrc: hotDogImg,
-      price: '135',
-      tags: [ 'spicy', 'vegetarian' ]
-    },
-  ]
-
-
+export default function CollectionList({ products }) {
   return (
     <div className="collection">
       <Container>
         <Link  href='/#shaurma'>
           <a name='shaurma'>
             <h2 className={ styles.title }>
-              <span>Хотдоги</span>
+              <span>Шаурма</span>
             </h2>
           </a>
         </Link>
         <div className={ styles.grid }>{ 
-          data.map(product => {
-            return <Product key={ product } data={ product } />
+          products.edges.map(product => {
+            return <Product key={ product.node.id } data={ product } />
           })
         }</div>
       </Container>

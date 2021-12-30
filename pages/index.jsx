@@ -3,8 +3,9 @@ import Layout from '../components/Layout'
 import Hero from '../components/Hero'
 import logo from '../public/logo_icon.png'
 import CollectionList from '../components/CollectionList'
+import { storefront } from '../untils'
 
-export default function Home() {
+export default function Home({ products }) {
   return (
     <>
       <Head>
@@ -14,9 +15,48 @@ export default function Home() {
       </Head>
       <Layout>
         <Hero />
-        <CollectionList />
+        <CollectionList products={ products } />
       </Layout>
     </>
     
   )
 }
+
+export async function getStaticProps() {
+  
+  const { data } = await storefront(productsQuery)
+
+  return {
+    props: {
+      products: data.products
+    }
+  }
+}
+
+const productsQuery = `
+  query Products {
+    products(first: 3) {
+      edges {
+        node {
+          id
+          handle
+          title
+          description
+          images(first: 1) {
+            edges {
+              node {
+                transformedSrc
+                altText
+              }
+            }
+          }
+          priceRange {
+            minVariantPrice {
+              amount
+            }
+          }
+        }
+      }
+    }
+  }
+`
