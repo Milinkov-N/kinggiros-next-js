@@ -1,37 +1,18 @@
 import Link from 'next/link'
 import styles from './header.module.css'
-import Altstyles from './alt.module.css'
-import logoImg from '../public/logo.png'
 import crown from '../public/crown.svg'
 import Container from './Container'
-import { Button, Cart } from './ui/Button'
-import Logo from './ui/Logo'
+import { Button } from './ui/Button'
 
-const Title = () => {
-  return (
-    <div className={ styles.headerTitle }>
-      <div>
-        <h2>Вкусная еда</h2>
-        <h3>И напитки</h3>
-      </div>
-    </div>
-  )
-}
-
-// const Logo = () => {
-//   return (
-//     <a href="/" className={ styles.logo }>
-//       <img src={ logoImg.src } alt="King Giros logo" />
-//     </a>
-//   )
-// }
-
-const LogoAlt = () => {
+const Logo = () => {
   return (
     <Link href="/">
-      <a className={ Altstyles.logo }>
+      <a className={ styles.logo }>
         <img src={ crown.src } width={ 48 } alt="King Giros logo" />
-        <span>King Giros</span>
+        <header className={ styles.logoHeader }>
+          <h2>King Giros</h2>
+          <span>Доставка №1 в Воткинске!</span>
+        </header>
       </a>
     </Link>
   )
@@ -39,20 +20,11 @@ const LogoAlt = () => {
 
 const Delivery = () => {
   return (
-    <div className={ styles.deliveryTitle }>
+    <div className={ styles.delivery }>
       <p>Доставка еды <span>Воткинск</span></p>
-      <a href="tel:+79508389999">8 950 838 99 99</a>
-    </div>
-  )
-}
-
-const DeliveryAlt = () => {
-  return (
-    <div className={ Altstyles.delivery }>
-      <p>Доставка еды <span>Воткинск</span></p>
-      <a href="tel:+79508389999" className={ Altstyles.phone }>
-        <div className={ Altstyles.iconWrap }>
-          <i class="fas fa-phone-alt"></i>
+      <a href="tel:+79508389999" className={ styles.phone }>
+        <div className={ styles.iconWrap }>
+          <i aria-hidden className="fas fa-phone-alt"></i>
         </div>
         <span>8 950 838 99 99</span>
       </a>
@@ -60,38 +32,13 @@ const DeliveryAlt = () => {
   )
 }
 
-const Controls = () => {
-  return (
-    <div className={ styles.controls }>
-      <Button
-        label='Войти'
-        size='small'
-        color='white'
-      />
-    </div>
-  )
-}
-
 const Header = () => {
   return (
-    <header  className={ styles.appHeader }>
+    <header className={ styles.header }>
       <Container className={ styles.container }>
-        <Title />
         <Logo />
         <Delivery />
-        <Controls />
-      </Container>
-    </header>
-  )
-}
-
-const HeaderAlt = () => {
-  return (
-    <header className={ Altstyles.header }>
-      <Container className={ Altstyles.container }>
-        <Logo />
-        <DeliveryAlt />
-        <div className={ Altstyles.btnWrapper }>
+        <div className={ styles.btnWrapper }>
           <Button
             label='Войти'
             size='small'
@@ -103,4 +50,4 @@ const HeaderAlt = () => {
   )
 }
 
-export { Header, HeaderAlt }  
+export { Header, Logo, Delivery }  

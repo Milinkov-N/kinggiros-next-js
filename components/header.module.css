@@ -1,63 +1,67 @@
-.appHeader {
+.header {
   width: 100%;
-  background: var(--clr-primary-400);
-  color: #fff;
   padding: 1rem 0;
 }
 
 .container {
-  display: grid;
-  align-items: center;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 1rem;
-  grid-template-areas:
-    'title title logo delivery controls';
-}
-
-.headerTitle {
   display: flex;
-  justify-content: center;
-  grid-area: title;
-  text-transform: uppercase;
-  font-size: 1.5rem;
-  font-style: italic;
-  color: var(--clr-secondary-400);
-  transform: rotate(354deg);
+  align-items: center;
 }
 
 .logo {
   display: flex;
-  justify-content: center;
-  height: 100px;
-  grid-area: logo;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.875rem;
+  font-weight: 500;
 }
 
-.logo img {
-  width: auto;
-  height: inherit;
+.logoHeader {
+  font-size: 1rem;
+  color: #222;
 }
 
-.deliveryTitle {
+.logoHeader h2 {
+  font-size: 1.75rem;
+  text-transform: uppercase;
+}
+
+.btnWrapper {
+  margin-left: auto;
+}
+
+.delivery {
+  display: flex;
+  flex-direction: column;
+  gap: .25rem;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-left: 3rem;
+}
+
+.delivery p span {
+  color: var(--clr-secondary-400);
+}
+
+.delivery a {
   font-size: .875rem;
   font-weight: 600;
-  grid-area: delivery;
-}
-
-.deliveryTitle span {
-  display: inline-block;
-  color: var(--clr-secondary-400);
-  margin-bottom: .5em;
-}
-
-.deliveryTitle a {
   font-style: italic;
-  color: var(--clr-secondary-400);
 }
 
-.controls {
+.phone {
   display: flex;
+  gap: .5rem;
+}
+
+.iconWrap {
+  display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: flex-end;
-  gap: 1rem;
-  grid-area: controls;
+  width: 18px;
+  height: 18px;
+  background: #000;
+  border-radius: 50%;
+  font-size: .55rem;
+  color: var(--clr-secondary-400);
 }

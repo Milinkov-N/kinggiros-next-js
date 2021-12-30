@@ -1,12 +1,13 @@
 import style from './layout.module.css'
-import { Header, HeaderAlt } from './Header'
+import { Header } from './Header'
+import { OriginalHeader } from './archive/originalHeader'
 import Nav from './Nav'
 import Footer from './Footer'
 
 export default function Layout({ children }) {
   return (
     <div className={ style.layout }>
-      <HeaderAlt />
+      <Header />
       <Nav />
       { children }
       <Footer />

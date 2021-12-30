@@ -3,55 +3,63 @@ import styles from './nav.module.css'
 import Container from './Container'
 import { Cart } from './ui/Button'
 
+const LINKS = [
+  {
+    name: 'Шаурма',
+    href: '/#shaurma'
+  },
+  {
+    name: 'Пицца',
+    href: '/#pizza'
+  },
+  {
+    name: 'Бургеры',
+    href: '/#burgers'
+  },
+  {
+    name: 'Чебуреки',
+    href: '/#chebureki'
+  },
+  {
+    name: 'Напитки',
+    href: '/#beverages'
+  },
+  {
+    name: 'Закуски',
+    href: '/#snacks'
+  },
+  {
+    name: 'Добавки',
+    href: '/#addons'
+  },
+  {
+    name: 'Вкусняшки',
+    href: '/#tasties'
+  },
+]
+
 export default function Nav() {
   return (
-    <nav className={ styles.navigation } ref={el => {
-      if (!el) return
-      fixOnScroll(el)
-    }}>
+    <nav 
+      className={ styles.navigation }
+      ref={el => {
+        if (!el) return 
+
+        fixOnScroll(el)
+      }}
+    >
       <Container className={ styles.container }>
-        <ul className={ styles.navigationList }>
-          <li>
-            <Link href='/#shaurma'>
-              <a className={ styles.link }>Шаурма</a>
-            </Link>
-          </li>
-          <li>
-            <Link href='/#shaurma'>
-              <a className={ styles.link }>Пицца</a>
-            </Link>
-          </li>
-          <li>
-            <Link href='/#shaurma'>
-              <a className={ styles.link }>Бургеры</a>
-            </Link>
-          </li>
-          <li>
-            <Link href='/#shaurma'>
-              <a className={ styles.link }>Чебуреки</a>
-            </Link>
-          </li>
-          <li>
-            <Link href='/#shaurma'>
-              <a className={ styles.link }>Напитки</a>
-            </Link>
-          </li>
-          <li>
-            <Link href='/#shaurma'>
-              <a className={ styles.link }>Закуски</a>
-            </Link>
-          </li>
-          <li>
-            <Link href='/#shaurma'>
-              <a className={ styles.link }>Добавки</a>
-            </Link>
-          </li>
-          <li>
-            <Link href='/#shaurma'>
-              <a className={ styles.link }>Вкусняшки</a>
-            </Link>
-          </li>
-        </ul>
+        <ul className={ styles.navigationList }>{ 
+          LINKS.map(link => {
+            return (
+              <li key={ link.name }>
+                <Link href={ link.href }>
+                  <a className={ styles.link }>{ link.name }</a>
+                </Link>
+              </li>
+            )
+          })
+        }</ul>
         <Cart />
       </Container>
     </nav>

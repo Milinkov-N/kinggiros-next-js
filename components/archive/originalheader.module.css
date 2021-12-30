@@ -1,0 +1,80 @@
+.header {
+  width: 100%;
+  background: var(--clr-primary-400);
+  color: #fff;
+  padding: 1rem 0;
+}
+
+.container {
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+  grid-template-areas:
+    'title title logo delivery controls';
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  grid-area: title;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-style: italic;
+  color: var(--clr-secondary-400);
+  transform: rotate(354deg);
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  height: 100px;
+  grid-area: logo;
+}
+
+.logo img {
+  width: auto;
+  height: inherit;
+}
+
+.delivery {
+  font-size: .875rem;
+  font-weight: 600;
+  grid-area: delivery;
+}
+
+.delivery span {
+  display: inline-block;
+  color: var(--clr-secondary-400);
+  margin-bottom: .5em;
+}
+
+.delivery a {
+  font-style: italic;
+  color: var(--clr-secondary-400);
+}
+
+.phone {
+  display: flex;
+  gap: .5rem;
+}
+
+.iconWrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 18px;
+  height: 18px;
+  background: #fff;
+  border-radius: 50%;
+  font-size: .55rem;
+  color: var(--clr-secondary-400);
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+  grid-area: controls;
+}
