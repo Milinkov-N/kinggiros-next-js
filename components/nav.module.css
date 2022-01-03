@@ -5,7 +5,7 @@
   z-index: 1000;
   background: #fff;
   box-shadow: 0 0 15px rgba( 0 0 0 / 0);
-  transition: .2s box-shadow ease;
+  transition: .2s box-shadow ease, .3s left ease;
 }
 
 @supports(backdrop-filter: blur(6px)) {
@@ -40,4 +40,54 @@
 
 .link:hover {
   color: var(--clr-secondary-400);
+}
+
+.closeNav {
+  display: none;
+  position: absolute;
+  font-size: 1.5rem;
+  top: 0;
+  right: 1rem;
+}
+
+@media (max-width: 900px) {
+  .navigation {
+    position: fixed;
+    top: 0;
+    left: -120%;
+    width: 300px;
+    height: 100vh;
+    padding: 1.5rem 0;
+    z-index: 9999;
+    background: #fff;
+    box-shadow: 0 0 15px rgba( 0 0 0 / .1);
+    /* transition: unset; */
+  }
+
+  /* .navFixed {
+    box-shadow: unset;
+  } */
+
+  .navOpened {
+    left: 0;
+  }
+
+  .container {
+    padding: 0 20px;
+  }
+
+  .navigation ul {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cart {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
+  .closeNav {
+    display: block;
+  }
 }

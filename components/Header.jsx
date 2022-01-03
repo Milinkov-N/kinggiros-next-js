@@ -2,13 +2,13 @@ import Link from 'next/link'
 import styles from './header.module.css'
 import crown from '../public/crown.svg'
 import Container from './Container'
-import { Button } from './ui/Button'
+import { Button, Cart, OpenNav } from './ui/Button'
 
 const Logo = () => {
   return (
     <Link href="/">
       <a className={ styles.logo }>
-        <img src={ crown.src } width={ 48 } alt="King Giros logo" />
+        <img src={ crown.src } alt="King Giros logo" />
         <header className={ styles.logoHeader }>
           <h2>King Giros</h2>
           <span>Доставка №1 в Воткинске!</span>
@@ -36,8 +36,10 @@ const Header = () => {
   return (
     <header className={ styles.header }>
       <Container className={ styles.container }>
+        <OpenNav className={ styles.openNav } />
         <Logo />
         <Delivery />
+        <Cart className={ styles.cart } />
         <div className={ styles.btnWrapper }>
           <Button
             label='Войти'

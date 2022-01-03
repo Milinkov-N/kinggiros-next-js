@@ -1,11 +1,23 @@
 .header {
+  background: #fff;
   width: 100%;
   padding: 1rem 0;
+  z-index: 9999;
+}
+
+.header img {
+  width: 48px;
 }
 
 .container {
   display: flex;
   align-items: center;
+}
+
+.openNav {
+  display: none;
+  font-size: 1.5rem;
+  margin-right: .75em;
 }
 
 .logo {
@@ -22,7 +34,7 @@
 }
 
 .logoHeader h2 {
-  font-size: 1.75rem;
+  font-size: 1.75em;
   text-transform: uppercase;
 }
 
@@ -64,4 +76,57 @@
   border-radius: 50%;
   font-size: .55rem;
   color: var(--clr-secondary-400);
+}
+
+.cart {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .header {
+    position: sticky;
+    top: 0;
+    box-shadow: 0 0 15px rgba(0 0 0 / .1);
+  }
+
+  .cart {
+    display: inline-block;
+  }
+
+  .btnWrapper {
+    margin-left: 1.5rem;
+  }
+
+  .openNav {
+    display: inline-block;
+  }
+}
+
+@media (max-width: 720px) {
+  .header img {
+    width: 38px;
+  }
+
+  .logoHeader {
+    font-size: .8rem;
+    color: #222;
+  }
+
+  .logoHeader img {
+    width: 24px;
+  }
+
+  .logoHeader span {
+    display: none;
+  }
+
+  .delivery {
+    display: none;
+  }
+}
+
+@media (max-width: 500px) {
+  .btnWrapper {
+    display: none;
+  }
 }

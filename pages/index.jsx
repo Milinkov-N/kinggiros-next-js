@@ -3,7 +3,7 @@ import Layout from '../components/Layout'
 import Hero from '../components/Hero'
 import logo from '../public/logo_icon.png'
 import CollectionList from '../components/CollectionList'
-import { storefront } from '../untils'
+import { storefront } from '../utils'
 
 export default function Home({ products }) {
   return (

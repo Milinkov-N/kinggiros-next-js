@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import styles from './nav.module.css'
 import Container from './Container'
-import { Cart } from './ui/Button'
+import { Cart, CloseNav } from './ui/Button'
 
 const LINKS = [
   {
@@ -38,10 +38,10 @@ const LINKS = [
   },
 ]
 
-export default function Nav() {
+export default function Nav({ isOpened }) {
   return (
     <nav 
-      className={ styles.navigation }
+      className={ `${styles.navigation} ${ isOpened ? styles.navOpened : 'closed' }` }
       ref={el => {
         if (!el) return 
 
@@ -60,7 +60,8 @@ export default function Nav() {
             )
           })
         }</ul>
-        <Cart />
+        <Cart className={ styles.cart } />
+        <CloseNav className={ styles.closeNav } />
       </Container>
     </nav>
   )

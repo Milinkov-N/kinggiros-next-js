@@ -1,5 +1,3 @@
-import Link from 'next/link'
-
 export default function Container(props) {
   const containerClass = `container ${ props?.className }`
 
