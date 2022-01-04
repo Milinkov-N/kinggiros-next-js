@@ -3,6 +3,8 @@ import styles from './header.module.css'
 import crown from '../public/crown.svg'
 import Container from './Container'
 import { Button, Cart, OpenNav } from './ui/Button'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPhoneAlt } from '@fortawesome/free-solid-svg-icons'
 
 const Logo = () => {
   return (
@@ -24,7 +26,7 @@ const Delivery = () => {
       <p>Доставка еды <span>Воткинск</span></p>
       <a href="tel:+79508389999" className={ styles.phone }>
         <div className={ styles.iconWrap }>
-          <i aria-hidden className="fas fa-phone-alt"></i>
+          <FontAwesomeIcon icon={ faPhoneAlt } />
         </div>
         <span>8 950 838 99 99</span>
       </a>

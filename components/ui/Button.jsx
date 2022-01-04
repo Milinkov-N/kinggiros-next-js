@@ -2,6 +2,8 @@ import Link from 'next/link'
 import { useContext } from 'react'
 import styles from './button.module.css'
 import navContext from '../../utils/navContext'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBars, faTimes , faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 
 const Button = ({ label, size, color }) => {
   let btnClass = [ styles.btn ]
@@ -26,7 +28,7 @@ const OpenNav = ({ className }) => {
 
   return (
     <button className={ `${ styles.btn }  ${ className }` } onClick={ handleOpen }>
-      <i aria-hidden className={ `fas fa-bars` }></i>
+      <FontAwesomeIcon icon={ faBars } />
     </button>
   )
 }
@@ -43,7 +45,7 @@ const CloseNav = ({ className, children, includeIcon }) => {
     
     if (!includeIcon) return null
 
-    return <i aria-hidden className={ `fas fa-times` }></i>
+    return <FontAwesomeIcon icon={ faTimes } />
   }
 
   return (
@@ -60,7 +62,7 @@ const Cart = ({ className }) => {
   return (   
     <Link href="/">
       <a className={ cartClass }>
-        <i aria-hidden className="fas fa-shopping-cart"></i>
+        <FontAwesomeIcon icon={ faShoppingCart } />
         <span>450 RUB</span>
       </a>
     </Link>

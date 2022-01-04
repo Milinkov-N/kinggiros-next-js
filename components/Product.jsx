@@ -13,7 +13,7 @@ export default function Product({ data }) {
 
   return (
     <div className={ styles.product }>
-      <Link href={ `/categories/${product.handle}` }>
+      <Link href={ `/products/${product.handle}` }>
         <a className={ styles.link }>
           <div className={ styles.imgWrapper }>
             <Image 
