@@ -34,6 +34,7 @@
 }
 
 .link {
+  font-size: 1rem;
   padding: .5em 0;
   transition: .15s color ease;
 }

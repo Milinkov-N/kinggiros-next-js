@@ -22,6 +22,10 @@ a {
   box-sizing: border-box;
 }
 
+.scroll-lock {
+  overflow: hidden;
+}
+
 .container {
   max-width: 1300px;
   padding: 0 50px;

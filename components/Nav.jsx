@@ -53,9 +53,11 @@ export default function Nav({ isOpened }) {
           LINKS.map(link => {
             return (
               <li key={ link.name }>
-                <Link href={ link.href }>
-                  <a className={ styles.link }>{ link.name }</a>
-                </Link>
+                <CloseNav includeIcon={ false }>
+                  <Link href={ link.href }>
+                    <a className={ styles.link }>{ link.name }</a>
+                  </Link>
+                </CloseNav>
               </li>
             )
           })

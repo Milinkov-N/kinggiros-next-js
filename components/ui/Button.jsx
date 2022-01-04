@@ -19,7 +19,10 @@ const Button = ({ label, size, color }) => {
 
 const OpenNav = ({ className }) => {
   const { setOpened } = useContext(navContext)
-  const handleOpen = () => setOpened(true)
+  const handleOpen = () => {
+    document.body.classList.add('scroll-lock')
+    setOpened(true)
+  }
 
   return (
     <button className={ `${ styles.btn }  ${ className }` } onClick={ handleOpen }>
@@ -28,13 +31,25 @@ const OpenNav = ({ className }) => {
   )
 }
 
-const CloseNav = ({ className }) => {
+const CloseNav = ({ className, children, includeIcon }) => {
   const { setOpened } = useContext(navContext)
-  const handleClose = () => setOpened(false)
+  const handleClose = () => {
+    document.body.classList.remove('scroll-lock')
+    setOpened(false)
+  }
+
+  const RenderIcon = () => {
+    if (typeof includeIcon === 'undefined') includeIcon = true
+    
+    if (!includeIcon) return null
+
+    return <i aria-hidden className={ `fas fa-times` }></i>
+  }
 
   return (
     <button className={ `${ styles.btn } ${ className }` } onClick={ handleClose }>
-      <i aria-hidden className={ `fas fa-times` }></i>
+      <RenderIcon />
+      { children }
     </button>
   )
 }
