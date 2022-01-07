@@ -58,7 +58,7 @@
 }
 
 .description {
-  color: #555;
+  color: var(--clr-neutral-800);
 }
 
 .footer {

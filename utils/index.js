@@ -35,6 +35,7 @@ async function createCart() {
 
   try {
     const { data } = await storefront(query)
+
     const cart = {
       cartId: data.cartCreate?.cart?.id,
       checkoutUrl: data.cartCreate?.cart?.checkoutUrl,
@@ -46,4 +47,82 @@ async function createCart() {
   }
 }
 
-export { storefront, createCart }
+async function loadCart(cartID) {
+  const query = `
+    query getCart($cartID: ID!) {
+      cart(id: $cartID) {
+        id
+        checkoutUrl
+        estimatedCost {
+          subtotalAmount {
+            amount
+            currencyCode
+          }
+          totalAmount {
+            amount
+            currencyCode
+          }
+        }
+        lines(first: 100) {
+          edges {
+            node {
+              id
+              quantity
+              merchandise {
+                ... on ProductVariant {
+                  product {
+                    id
+                    handle
+                    title
+                    description
+                    priceRange {
+                      minVariantPrice {
+                        amount
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  `
+
+  const { data } = await storefront(query, { cartID })
+
+  return data
+}
+
+async function addToCart() {
+  const query = `
+    mutation AddToCart($cartId: ID!, $productId: ID!) {
+      cartLinesAdd(cartId: $cartId, lines: [{quantity: 1, merchandiseId: $productId}]) {
+        cart {
+          id
+          lines(first:10) {
+            edges {
+              node {
+                id
+                merchandise {
+                  ... on ProductVariant {
+                    id
+                    product {
+                      id
+                      title
+                    }
+                  }
+                }
+              }
+            }
+          }   
+        }
+      }
+    }
+  `
+
+  // TODO 
+}
+
+export { storefront, createCart, loadCart }
