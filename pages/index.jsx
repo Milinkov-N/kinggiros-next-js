@@ -3,9 +3,12 @@ import Layout from '../components/Layout'
 import Hero from '../components/Hero'
 import logo from '../public/logo_icon.png'
 import CollectionList from '../components/CollectionList'
-import { storefront } from '../utils'
+import { storefront, createCart } from '../utils'
 
-export default function Home({ products }) {
+export default function Home({ products, cart }) {
+
+  console.log(cart)
+
   return (
     <>
       <Head>
@@ -24,10 +27,13 @@ export default function Home({ products }) {
 export async function getStaticProps() {
   
   const { data } = await storefront(productsQuery)
+  const cart = await createCart()
+  
 
   return {
     props: {
-      products: data.products
+      products: data.products,
+      cart: cart,
     }
   }
 }

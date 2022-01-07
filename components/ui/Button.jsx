@@ -60,7 +60,7 @@ const Cart = ({ className }) => {
   const cartClass = `${ styles.cart } ${ className }`
 
   return (   
-    <Link href="/">
+    <Link href="/cart">
       <a className={ cartClass }>
         <FontAwesomeIcon icon={ faShoppingCart } />
         <span>450 RUB</span>

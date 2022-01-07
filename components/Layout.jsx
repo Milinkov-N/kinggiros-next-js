@@ -1,6 +1,6 @@
-import { useContext, useState } from 'react'
+import { useState } from 'react'
 import navContext from '../utils/navContext'
-import style from './layout.module.css'
+import styles from './layout.module.css'
 import { Header } from './Header'
 // import { OriginalHeader } from './archive/originalHeader'
 import Nav from './Nav'
@@ -10,12 +10,14 @@ export default function Layout({ children }) {
   const [opened, setOpened] = useState(false)
 
   return (
-    <div className={ style.layout }>
+    <div className={ styles.layout }>
       <navContext.Provider value={{ opened, setOpened }}>
         <Header />
         <Nav isOpened={ opened } />
       </navContext.Provider>
-      { children }
+      <main className={ styles.main }>
+        { children }
+      </main>
       <Footer />
     </div>
   )

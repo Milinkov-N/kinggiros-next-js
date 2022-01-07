@@ -3,8 +3,7 @@ import Layout from '../../components/Layout'
 import Container from '../../components/Container'
 import styles from './productpage.module.css'
 import { Button } from '../../components/ui/Button'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons'
+import QuantitySelector from '../../components/ui/QuantitySelector'
 import productImage from '../../public/pasta.jpg'
 
 export default function ProductPage() {
@@ -25,15 +24,7 @@ export default function ProductPage() {
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, accusantium.</p>
           </div>
           <div className={ styles.action }>
-            <div className={ styles.quantity }>
-              <button className={ `${ styles.quantityElem } ${ styles.btn }` }>
-                <FontAwesomeIcon icon={ faMinus } />
-              </button>
-              <span className={ `${ styles.quantityElem } ${ styles.amount }` }>1</span>
-              <button className={ `${ styles.quantityElem } ${ styles.btn }` }>
-                <FontAwesomeIcon icon={ faPlus } />
-              </button>
-            </div>
+            <QuantitySelector />
             <Button
               color='black'
               size='medium'

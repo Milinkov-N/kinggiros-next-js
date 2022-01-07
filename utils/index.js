@@ -1,4 +1,4 @@
-export async function storefront(query, variables = {}) {
+async function storefront(query, variables = {}) {
 
   const url = process.env.NEXT_PUBLIC_API_URL
   const options = { 
@@ -20,3 +20,30 @@ export async function storefront(query, variables = {}) {
     console.error(e)
   }
 }
+
+async function createCart() {
+  const query = `
+    mutation CreateCart {
+      cartCreate {
+        cart {
+          id
+          checkoutUrl
+        }
+      }
+    }
+  `
+
+  try {
+    const { data } = await storefront(query)
+    const cart = {
+      cartId: data.cartCreate?.cart?.id,
+      checkoutUrl: data.cartCreate?.cart?.checkoutUrl,
+    }
+    
+    return cart
+  } catch (e) {
+    console.error(e)
+  }
+}
+
+export { storefront, createCart }
