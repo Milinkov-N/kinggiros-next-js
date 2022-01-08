@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import styles from './header.module.css'
+import styles from './style_modules/header.module.css'
 import crown from '../public/crown.svg'
 import Container from './Container'
 import { Button, Cart, OpenNav } from './ui/Button'

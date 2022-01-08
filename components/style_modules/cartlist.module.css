@@ -1,0 +1,52 @@
+.item {
+  position: relative;
+  display: flex;
+  margin: 0 auto;
+}
+
+.item img {
+  width: auto;
+  height: 70px;
+  border-radius: 6px;
+}
+
+.itemInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: .25rem;
+  font-weight: 500;
+  margin-left: 1.5rem;
+}
+
+.itemInfo h3 {
+  font-weight: inherit;
+}
+
+.flex {
+  height: 32px;
+  display: flex;
+  align-items: stretch;
+  gap: 1rem;
+}
+
+.itemPrice {
+  font-size: 1.15rem;
+  margin: auto 0;
+}
+
+.deleteItemBtn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: none;
+  border: none;
+  font-size: 1rem;
+  color: var(--clr-neutral-700);
+  cursor: pointer;
+  transition: .2s color ease;
+}
+
+.deleteItemBtn:hover {
+  color: #e21b2b;
+}

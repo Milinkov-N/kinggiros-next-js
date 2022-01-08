@@ -1,4 +1,4 @@
-import style from './hero.module.css'
+import styles from './style_modules/hero.module.css'
 import Image from 'next/image'
 import Container from './Container'
 import { Button } from './ui/Button'
@@ -6,13 +6,13 @@ import heroImg from '../public/hero.jpg'
 
 export default function Hero() {
   return (
-    <div className={ style.hero }>
-      <div className={ style.bgImage }>
+    <div className={ styles.hero }>
+      <div className={ styles.bgImage }>
         {/* <Image priority src={ heroImg } alt='hero backgound image'></Image> */}
       </div>
-      <Container className={ style.container }>
-        <h1 className={ style.title }>Вкуснейшие еда и напитки в <span>King Giros</span></h1>
-        <p className={ style.subtitle }>Мы первое кафе по приготовлению шаурмы, а также самая крупная доставка в г. Воткинске... И скоро будем самой быстрой!</p>
+      <Container className={ styles.container }>
+        <h1 className={ styles.title }>Вкуснейшие еда и напитки в <span>King Giros</span></h1>
+        <p className={ styles.subtitle }>Мы первое кафе по приготовлению шаурмы, а также самая крупная доставка в г. Воткинске... И скоро будем самой быстрой!</p>
         <Button
         label='Перейти к витрине'
         size='large'

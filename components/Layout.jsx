@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import navContext from '../utils/navContext'
-import styles from './layout.module.css'
+import styles from './style_modules/layout.module.css'
 import { Header } from './Header'
 // import { OriginalHeader } from './archive/originalHeader'
 import Nav from './Nav'

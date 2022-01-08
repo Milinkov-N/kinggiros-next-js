@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { Button } from './ui/Button'
-import styles from './product.module.css'
+import styles from './style_modules/product.module.css'
 
 export default function Product({ data }) {
 

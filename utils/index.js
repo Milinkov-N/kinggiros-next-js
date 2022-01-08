@@ -68,6 +68,12 @@ async function loadCart(cartID) {
             node {
               id
               quantity
+              estimatedCost {
+                totalAmount {
+                  amount
+                  currencyCode
+                }
+              }
               merchandise {
                 ... on ProductVariant {
                   product {

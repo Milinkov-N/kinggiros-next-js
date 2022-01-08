@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import styles from './nav.module.css'
+import styles from './style_modules/nav.module.css'
 import Container from './Container'
 import { Cart, CloseNav } from './ui/Button'
 
