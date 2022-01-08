@@ -5,7 +5,7 @@ import navContext from '../../utils/navContext'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faTimes , faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 
-const Button = ({ label, size, color }) => {
+const Button = ({ as, label, size, color, href }) => {
   let btnClass = [ styles.btn ]
   const sizeSelector = `btn-${size}`
   const colorSelector = `btn-${color}`
@@ -16,7 +16,20 @@ const Button = ({ label, size, color }) => {
 
   btnClass = btnClass.join(' ')
 
-  return <button className={ btnClass }>{ label }</button>
+  switch (as) {
+    case 'link':
+      return (
+        <Link href={ href }>
+          <a className={ btnClass }>{ label }</a>
+        </Link>
+      )
+
+    case 'button':
+      return <button className={ btnClass }>{ label }</button>
+
+    default:
+      return <button className={ btnClass }>{ label }</button>
+  }
 }
 
 const OpenNav = ({ className }) => {

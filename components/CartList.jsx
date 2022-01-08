@@ -6,7 +6,7 @@ import itemImg from '../public/pasta.jpg'
 
 export const CartItem = ({ item }) => {
   return (
-    <div className={ styles.item } key={ item.id }>
+    <div className={ styles.item }>
       <img src={ itemImg.src } alt="item image" />
       <div className={ styles.itemInfo }>
         <h3 className={ styles.itemName }>{ item.title }</h3>
@@ -36,7 +36,7 @@ export default function CartList({ items }) {
           estimatedCost: `${Math.floor(node.estimatedCost.totalAmount.amount)} ${node.estimatedCost.totalAmount.currencyCode}`
         }
 
-        return <CartItem item={ itemInfo } />
+        return <CartItem item={ itemInfo } key={ node.id } />
       })
     }</div>
   )

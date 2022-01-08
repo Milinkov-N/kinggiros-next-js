@@ -22,6 +22,8 @@ export default function OrderSummary({ orderDetails }) {
         </tbody>
       </table>
       <Button
+        as='link'
+        href={ orderDetails.checkoutUrl }
         color='secondary'
         label='Оформить заказ'
       />
