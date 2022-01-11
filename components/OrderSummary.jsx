@@ -9,7 +9,7 @@ export default function OrderSummary({ orderDetails }) {
         <tbody>
           <tr className={ styles.tableRow }>
             <td>Подытог</td>
-            <td>{ orderDetails.subtotal }</td>
+            <td>{ orderDetails?.subtotal || '420 RUB' }</td>
           </tr>
           <tr className={ styles.tableRow }>
             <td>Доставка</td>
@@ -17,13 +17,13 @@ export default function OrderSummary({ orderDetails }) {
           </tr>
           <tr className={ styles.tableRow }>
             <td>Итого</td>
-            <td>{ orderDetails.total }</td>
+            <td>{ orderDetails?.total || '228 RUB' }</td>
           </tr>
         </tbody>
       </table>
       <Button
         as='link'
-        href={ orderDetails.checkoutUrl }
+        href={ orderDetails?.checkoutUrl || '/' }
         color='secondary'
         label='Оформить заказ'
       />

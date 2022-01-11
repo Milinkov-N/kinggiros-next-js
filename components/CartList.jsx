@@ -24,20 +24,139 @@ export const CartItem = ({ item }) => {
 
 export default function CartList({ items }) {
   return (
-    <div className="items-list">{ 
-      items.map(item => {
-        const { node } = item
+    // <div className="items-list">{ 
+    //   items.map(item => {
+    //     const { node } = item
 
-        const itemInfo = {
-          id: node.id,
-          handle: node.merchandise.product.handle,
-          title: node.merchandise.product.title,
-          quantity: node.quantity,
-          estimatedCost: `${Math.floor(node.estimatedCost.totalAmount.amount)} ${node.estimatedCost.totalAmount.currencyCode}`
-        }
+    //     const itemInfo = {
+    //       id: node.id,
+    //       handle: node.merchandise.product.handle,
+    //       title: node.merchandise.product.title,
+    //       quantity: node.quantity,
+    //       estimatedCost: `${Math.floor(node.estimatedCost.totalAmount.amount)} ${node.estimatedCost.totalAmount.currencyCode}`
+    //     }
 
-        return <CartItem item={ itemInfo } key={ node.id } />
-      })
-    }</div>
+    //     return <CartItem item={ itemInfo } key={ node.id } />
+    //   })
+    // }</div>
+    <div className={ styles.itemsList }>
+      <div className={ styles.item }>
+        <img src={ itemImg.src } alt="item image" />
+        <div className={ styles.itemInfo }>
+          <h3 className={ styles.itemName }>Шаурма Стандарт</h3>
+          <div className={ styles.flex }>
+            <QuantitySelector />
+            <span className={ styles.itemPrice }>450 RUB</span>
+          </div>              
+        </div>
+        <button className={ styles.deleteItemBtn }>
+          <FontAwesomeIcon icon={ faTimes } />
+        </button>
+      </div>
+      <div className={ styles.item }>
+        <img src={ itemImg.src } alt="item image" />
+        <div className={ styles.itemInfo }>
+          <h3 className={ styles.itemName }>Шаурма Стандарт</h3>
+          <div className={ styles.flex }>
+            <QuantitySelector />
+            <span className={ styles.itemPrice }>450 RUB</span>
+          </div>              
+        </div>
+        <button className={ styles.deleteItemBtn }>
+          <FontAwesomeIcon icon={ faTimes } />
+        </button>
+      </div>
+      <div className={ styles.item }>
+        <img src={ itemImg.src } alt="item image" />
+        <div className={ styles.itemInfo }>
+          <h3 className={ styles.itemName }>Шаурма Стандарт</h3>
+          <div className={ styles.flex }>
+            <QuantitySelector />
+            <span className={ styles.itemPrice }>450 RUB</span>
+          </div>              
+        </div>
+        <button className={ styles.deleteItemBtn }>
+          <FontAwesomeIcon icon={ faTimes } />
+        </button>
+      </div>
+      <div className={ styles.item }>
+        <img src={ itemImg.src } alt="item image" />
+        <div className={ styles.itemInfo }>
+          <h3 className={ styles.itemName }>Шаурма Стандарт</h3>
+          <div className={ styles.flex }>
+            <QuantitySelector />
+            <span className={ styles.itemPrice }>450 RUB</span>
+          </div>              
+        </div>
+        <button className={ styles.deleteItemBtn }>
+          <FontAwesomeIcon icon={ faTimes } />
+        </button>
+      </div>
+      <div className={ styles.item }>
+        <img src={ itemImg.src } alt="item image" />
+        <div className={ styles.itemInfo }>
+          <h3 className={ styles.itemName }>Шаурма Стандарт</h3>
+          <div className={ styles.flex }>
+            <QuantitySelector />
+            <span className={ styles.itemPrice }>450 RUB</span>
+          </div>              
+        </div>
+        <button className={ styles.deleteItemBtn }>
+          <FontAwesomeIcon icon={ faTimes } />
+        </button>
+      </div>
+      <div className={ styles.item }>
+        <img src={ itemImg.src } alt="item image" />
+        <div className={ styles.itemInfo }>
+          <h3 className={ styles.itemName }>Шаурма Стандарт</h3>
+          <div className={ styles.flex }>
+            <QuantitySelector />
+            <span className={ styles.itemPrice }>450 RUB</span>
+          </div>              
+        </div>
+        <button className={ styles.deleteItemBtn }>
+          <FontAwesomeIcon icon={ faTimes } />
+        </button>
+      </div>
+      <div className={ styles.item }>
+        <img src={ itemImg.src } alt="item image" />
+        <div className={ styles.itemInfo }>
+          <h3 className={ styles.itemName }>Шаурма Стандарт</h3>
+          <div className={ styles.flex }>
+            <QuantitySelector />
+            <span className={ styles.itemPrice }>450 RUB</span>
+          </div>              
+        </div>
+        <button className={ styles.deleteItemBtn }>
+          <FontAwesomeIcon icon={ faTimes } />
+        </button>
+      </div>
+      <div className={ styles.item }>
+        <img src={ itemImg.src } alt="item image" />
+        <div className={ styles.itemInfo }>
+          <h3 className={ styles.itemName }>Шаурма Стандарт</h3>
+          <div className={ styles.flex }>
+            <QuantitySelector />
+            <span className={ styles.itemPrice }>450 RUB</span>
+          </div>              
+        </div>
+        <button className={ styles.deleteItemBtn }>
+          <FontAwesomeIcon icon={ faTimes } />
+        </button>
+      </div>
+      <div className={ styles.item }>
+        <img src={ itemImg.src } alt="item image" />
+        <div className={ styles.itemInfo }>
+          <h3 className={ styles.itemName }>Шаурма Стандарт</h3>
+          <div className={ styles.flex }>
+            <QuantitySelector />
+            <span className={ styles.itemPrice }>450 RUB</span>
+          </div>              
+        </div>
+        <button className={ styles.deleteItemBtn }>
+          <FontAwesomeIcon icon={ faTimes } />
+        </button>
+      </div>
+    </div>
   )
 }

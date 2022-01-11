@@ -21,6 +21,37 @@ async function storefront(query, variables = {}) {
   }
 }
 
+async function getSingleProduct(handle) {
+  const query =  `
+    query GetProductsByHandle($handle: String!) {
+      product(handle: $handle) {
+        id
+        handle
+        title
+        descriptionHtml
+        priceRange {
+          minVariantPrice {
+            amount
+            currencyCode
+          }
+        }
+        images(first: 1) {
+          edges {
+            node {
+              altText
+              transformedSrc
+            }
+          }
+        }
+      }
+    }
+  `
+
+  const { data } = await storefront(query, { handle })
+
+  return data
+}
+
 async function createCart() {
   const query = `
     mutation CreateCart {
@@ -131,4 +162,66 @@ async function addToCart() {
   // TODO 
 }
 
-export { storefront, createCart, loadCart }
+async function recursiveCatalog(cursor = '', initialRequest = true) {
+  let data;
+
+  if (cursor !== '') {
+    const query = `{
+      products(after: "${cursor}", first: 250) {
+        edges {
+          cursor
+          node {
+            id
+            handle
+          }
+        }
+        pageInfo {
+          hasNextPage
+        }
+      }
+    }`;
+
+    const response = await storefront(query);
+    data = response.data.products.edges ? response.data.products.edges : [];
+
+    if (response.data.products.pageInfo.hasNextPage) {
+      const num = response.data.products.edges.length;
+      const cursor = response.data.products.edges[num - 1].cursor;
+      console.log('Cursor: ', cursor);
+
+      return data.concat(await recursiveCatalog(cursor));
+    } else {
+      return data;
+    }
+  } else {
+    const query = `{
+      products(first: 250) {
+        edges {
+          cursor
+          node {
+            id
+            handle
+          }
+        }
+        pageInfo {
+          hasNextPage
+        }
+      }
+    }
+    `;
+
+    const response = await storefront(query);
+    data = response.data.products.edges ? response.data.products.edges : [];
+
+    if (response.data.products.pageInfo.hasNextPage) {
+      const num = response.data.products.edges.length;
+      const cursor = response.data.products.edges[num - 1].cursor;
+
+      return data.concat(await recursiveCatalog(cursor));
+    } else {
+      return data;
+    }
+  }
+}
+
+export { storefront, getSingleProduct, createCart, loadCart, recursiveCatalog }
