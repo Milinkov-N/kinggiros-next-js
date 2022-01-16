@@ -36,6 +36,10 @@ const LINKS = [
     name: 'Вкусняшки',
     href: '/#tasties'
   },
+  {
+    name: 'Обратная связь',
+    href: '/contact-us'
+  },
 ]
 
 export default function Nav({ isOpened }) {

@@ -10,7 +10,7 @@ const Logo = () => {
   return (
     <Link href="/">
       <a className={ styles.logo }>
-        <img src={ crown.src } alt="King Giros logo" />
+        <img src={ crown.src } alt='logo' />
         <header className={ styles.logoHeader }>
           <h2>King Giros</h2>
           <span>Доставка №1 в Воткинске!</span>

@@ -5,13 +5,14 @@ import navContext, { cartContext } from '../../utils/Contexts'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faTimes , faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 
-const Button = ({ as, label, size, color, href, onClick }) => {
+const Button = ({ className, as, label, size, color, href, onClick }) => {
   let btnClass = [ styles.btn ]
   const sizeSelector = `btn-${size}`
   const colorSelector = `btn-${color}`
 
-  size ? btnClass.push(styles[sizeSelector]) : btnClass.push(styles['btn-medium'])
 
+  className && btnClass.push(className)
+  size ? btnClass.push(styles[sizeSelector]) : btnClass.push(styles['btn-medium'])
   color ? btnClass.push(styles[colorSelector]) : btnClass.push(styles['btn-white'])
 
   btnClass = btnClass.join(' ')

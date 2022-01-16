@@ -8,7 +8,6 @@ export default function Product({ data }) {
   const product = data.node
   const price = Math.floor(product.priceRange.minVariantPrice.amount)
 
-
   const myLoader= ({ src, width, quality }) => `${ src }?w=${ width }&q=${ quality || 75 }`
 
   return (
