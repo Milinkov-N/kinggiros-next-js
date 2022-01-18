@@ -34,4 +34,4 @@ yarn-error.log*
 .vercel
 
 # archive components folder
-/components/archive
+/components/archive/
