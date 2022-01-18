@@ -1,7 +1,7 @@
 import styles from './style_modules/cartmodal.module.css'
 import OrderSummary from './OrderSummary'
 import CartList from './CartList'
-import { Button } from './ui/Button'
+import Button from './ui/Button'
 import useCartContext from '../contexts/CartContext'
 
 export default function CartModal() {

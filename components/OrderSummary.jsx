@@ -1,5 +1,5 @@
 import styles from './style_modules/ordersummary.module.css'
-import { Button } from './ui/Button'
+import Button from './ui/Button'
 
 export default function OrderSummary({ orderDetails }) {
   return (
@@ -22,7 +22,6 @@ export default function OrderSummary({ orderDetails }) {
         </tbody>
       </table>
       <Button
-        as='link'
         href={ orderDetails?.checkoutUrl || '/' }
         color='secondary'
         label='Оформить заказ'

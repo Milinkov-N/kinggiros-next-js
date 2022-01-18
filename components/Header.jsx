@@ -2,9 +2,11 @@ import Link from 'next/link'
 import styles from './style_modules/header.module.css'
 import crown from '../public/crown.svg'
 import Container from './Container'
-import { Button, Cart, OpenNav } from './ui/Button'
+import Button from './ui/Button'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPhoneAlt } from '@fortawesome/free-solid-svg-icons'
+import { faPhoneAlt, faBars } from '@fortawesome/free-solid-svg-icons'
+import useNavContext from '../contexts/NavContext'
+import OpenCart from './OpenCart'
 
 const Logo = () => {
   return (
@@ -34,6 +36,20 @@ const Delivery = () => {
   )
 }
 
+const OpenNav = () => {
+  const { setOpened } = useNavContext()
+  const handleOpen = () => {
+    document.body.classList.add('scroll-lock')
+    setOpened(true)
+  }
+
+  return (
+    <Button className={ styles.openNav } onClick={ handleOpen }>
+      <FontAwesomeIcon icon={ faBars } />
+    </Button>
+  )
+}
+
 const Header = () => {
   return (
     <header className={ styles.header }>
@@ -41,7 +57,7 @@ const Header = () => {
         <OpenNav className={ styles.openNav } />
         <Logo />
         <Delivery />
-        <Cart className={ styles.cart } />
+        <OpenCart className={ styles.cart } />
         <div className={ styles.btnWrapper }>
           <Button
             label='Войти'

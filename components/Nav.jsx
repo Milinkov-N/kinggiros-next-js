@@ -1,8 +1,11 @@
 import Link from 'next/link'
 import styles from './style_modules/nav.module.css'
 import Container from './Container'
-import { Cart, CloseNav } from './ui/Button'
+import Button from './ui/Button'
 import useNavContext from '../contexts/NavContext'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTimes } from '@fortawesome/free-solid-svg-icons'
+import OpenCart from './OpenCart'
 
 const LINKS = [
   {
@@ -43,7 +46,30 @@ const LINKS = [
   },
 ]
 
-export default function Nav({ isOpened }) {
+const CloseNav = ({ className, children, includeIcon }) => {
+  const { setOpened } = useNavContext()
+  const handleClose = () => {
+    document.body.classList.remove('scroll-lock')
+    setOpened(false)
+  }
+
+  const RenderIcon = () => {
+    if (typeof includeIcon === 'undefined') includeIcon = true
+    
+    if (!includeIcon) return null
+
+    return <FontAwesomeIcon icon={ faTimes } />
+  }
+
+  return (
+    <Button className={ className } onClick={ handleClose }>
+      <RenderIcon />
+      { children }
+    </Button>
+  )
+}
+
+export default function Nav() {
   const { opened } = useNavContext()
   
   return (
@@ -60,16 +86,16 @@ export default function Nav({ isOpened }) {
           LINKS.map(link => {
             return (
               <li key={ link.name }>
-                <CloseNav includeIcon={ false }>
+                <CloseNav className={ styles.link } includeIcon={ false }>
                   <Link href={ link.href }>
-                    <a className={ styles.link }>{ link.name }</a>
+                    <a>{ link.name }</a>
                   </Link>
                 </CloseNav>
               </li>
             )
           })
         }</ul>
-        <Cart className={ styles.cart } />
+        <OpenCart className={ styles.cart } />
         <CloseNav className={ styles.closeNav } />
       </Container>
     </nav>

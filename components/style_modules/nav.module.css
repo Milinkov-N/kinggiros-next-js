@@ -49,6 +49,13 @@
   font-size: 1.5rem;
   top: 0;
   right: 1rem;
+  padding: unset;
+  background: transparent;
+}
+
+.cart {
+  padding: unset;
+  margin-left: auto;
 }
 
 @media (max-width: 900px) {

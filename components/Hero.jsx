@@ -1,8 +1,8 @@
 import styles from './style_modules/hero.module.css'
-import Image from 'next/image'
+// import Image from 'next/image'
 import Container from './Container'
-import { Button } from './ui/Button'
-import heroImg from '../public/hero.jpg'
+import Button from './ui/Button'
+// import heroImg from '../public/hero.jpg'
 
 export default function Hero() {
   return (

@@ -18,6 +18,7 @@
   display: none;
   font-size: 1.5rem;
   margin-right: .75em;
+  padding: unset;
 }
 
 .logo {
@@ -80,6 +81,8 @@
 
 .cart {
   display: none;
+  padding: unset;
+  margin-left: auto;
 }
 
 @media (max-width: 900px) {
