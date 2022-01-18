@@ -1,7 +1,7 @@
 import styles from './aboutus.module.css'
 import Layout from '../../components/Layout'
 import Container from '../../components/Container'
-import { Button } from '../../components/ui/Button'
+import Button from '../../components/ui/Button'
 import illustration from '../../public/about-us.svg'
 
 export default function ContactUsPage() {
