@@ -2,7 +2,7 @@ import Layout from '../../components/Layout'
 import Container from '../../components/Container'
 import OrderSummary from '../../components/OrderSummary'
 import CartList from '../../components/CartList'
-import styles from './cartpage.module.css'
+import styles from '../../styles/cartpage.module.css'
 import { useEffect, useState } from 'react'
 import { createCart, loadCart } from '../../utils'
 

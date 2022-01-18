@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router'
 import Layout from '../../components/Layout'
 import Container from '../../components/Container'
-import styles from './productpage.module.css'
+import styles from '../../styles/productpage.module.css'
 import Button from '../../components/ui/Button'
 import QuantitySelector from '../../components/ui/QuantitySelector'
 import productImage from '../../public/pasta.jpg'
