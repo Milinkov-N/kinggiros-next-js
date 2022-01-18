@@ -1,9 +1,9 @@
 import Link from 'next/link'
-import { useContext } from 'react'
 import styles from './button.module.css'
-import navContext, { cartContext } from '../../utils/Contexts'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faTimes , faShoppingCart } from '@fortawesome/free-solid-svg-icons'
+import useNavContext from '../../contexts/NavContext'
+import useCartContext from '../../contexts/CartContext'
 
 const Button = ({ className, as, label, size, color, href, onClick }) => {
   let btnClass = [ styles.btn ]
@@ -34,7 +34,7 @@ const Button = ({ className, as, label, size, color, href, onClick }) => {
 }
 
 const OpenNav = ({ className }) => {
-  const { setOpened } = useContext(navContext)
+  const { setOpened } = useNavContext()
   const handleOpen = () => {
     document.body.classList.add('scroll-lock')
     setOpened(true)
@@ -48,7 +48,7 @@ const OpenNav = ({ className }) => {
 }
 
 const CloseNav = ({ className, children, includeIcon }) => {
-  const { setOpened } = useContext(navContext)
+  const { setOpened } = useNavContext()
   const handleClose = () => {
     document.body.classList.remove('scroll-lock')
     setOpened(false)
@@ -71,13 +71,13 @@ const CloseNav = ({ className, children, includeIcon }) => {
 }
 
 const Cart = ({ className }) => {
-  const { setCartOpened } = useContext(cartContext)
-  const { setOpened } = useContext(navContext)
+  const { setOpened: cartSetOpened } = useCartContext()
+  const { setOpened: navSetOpened } = useNavContext()
 
   const handleOpen = () => {
     document.body.classList.add('scroll-lock')
-    setCartOpened(true)
-    setOpened(false)
+    cartSetOpened(true)
+    navSetOpened(false)
   }
 
   const cartClass = `${ styles.btn } ${ styles.cart } ${ className }`

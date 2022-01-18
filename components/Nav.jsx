@@ -2,6 +2,7 @@ import Link from 'next/link'
 import styles from './style_modules/nav.module.css'
 import Container from './Container'
 import { Cart, CloseNav } from './ui/Button'
+import useNavContext from '../contexts/NavContext'
 
 const LINKS = [
   {
@@ -43,9 +44,11 @@ const LINKS = [
 ]
 
 export default function Nav({ isOpened }) {
+  const { opened } = useNavContext()
+  
   return (
     <nav 
-      className={ `${styles.navigation} ${ isOpened ? styles.navOpened : 'closed' }` }
+      className={ `${styles.navigation} ${ opened && styles.navOpened }` }
       ref={el => {
         if (!el) return 
 
