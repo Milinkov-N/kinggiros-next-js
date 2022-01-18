@@ -31,7 +31,7 @@ const Delivery = () => {
       <p>Доставка еды <span>Воткинск</span></p>
       <a href="tel:+79508389999" className={ styles.phone }>
         <div className={ styles.iconWrap }>
-          <i class="fas fa-phone-alt"></i>
+          <i className="fas fa-phone-alt"></i>
         </div>
         <span>8 950 838 99 99</span>
       </a>
