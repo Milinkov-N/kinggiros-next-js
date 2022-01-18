@@ -44,7 +44,7 @@ const OpenNav = () => {
   }
 
   return (
-    <Button className={ styles.openNav } onClick={ handleOpen }>
+    <Button className={ styles.openNav } variant='text' onClick={ handleOpen }>
       <FontAwesomeIcon icon={ faBars } />
     </Button>
   )
@@ -62,7 +62,7 @@ const Header = () => {
           <Button
             label='Войти'
             size='small'
-            color='black'
+            variant='secondary'
           />
         </div>
       </Container>

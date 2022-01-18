@@ -2,34 +2,35 @@ import Link from 'next/link'
 
 export default function Button({
   className,
+  variant,
   size,
   color,
   href,
   onClick,
+  disabled,
+  glowing,
   label,
   children
 }) {
   let btnClass = []
-  const sizeSelector = `btn-${size}`
-  const colorSelector = `btn-${color}`
+  const variantSelector = variant ? `btn-${variant}` : 'btn-primary'
+  const sizeSelector = size ? `btn-${size}` : 'btn-medium'
+  const colorSelector = color ? `btn-${color}` : ''
 
   className && btnClass.push(className)
-
-  size ? btnClass.push(sizeSelector) : btnClass.push('btn-medium')
-
-  color ? btnClass.push(colorSelector) : btnClass.push('btn-white')
-
+  glowing && btnClass.push(`btn-${variant}-glowing`)
+  btnClass.push(variantSelector, sizeSelector, colorSelector)
   btnClass = btnClass.join(' ')
 
 
   const AsLink = () => (
     <Link href={ href || '/' }>
-      <a className={ btnClass }>{ label || children }</a>
+      <a className={ `btn ${btnClass}` }>{ label || children }</a>
     </Link>
   )
 
   const AsButton = () => (
-    <button className={ `btn ${ btnClass }` } onClick={ onClick }>
+    <button className={ `btn ${ btnClass }` } onClick={ onClick } disabled={ disabled }>
       { label || children }
     </button>
   )

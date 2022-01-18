@@ -38,7 +38,7 @@ export default function Product({ data }) {
       <p className={ styles.description }>{ getProductComposition(product.description) }</p>
       <footer className={ styles.footer }>
         <p className="product-price">{ `${ price } RUB` }</p>
-        <Button label='В корзину' color='secondary' />
+        <Button variant='primary' label='В корзину' />
       </footer>
     </div>
   )

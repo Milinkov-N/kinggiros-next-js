@@ -37,6 +37,11 @@
   padding: 1.25rem 1.25rem;
 }
 
+.btn {
+  padding: 0;
+  color: var(--clr-primary-400);
+}
+
 @media (max-width: 400px) {
   .cartModal {
     width: 100vw;

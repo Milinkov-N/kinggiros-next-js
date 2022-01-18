@@ -36,7 +36,7 @@ export default function ProductPage() {
           <div className={ styles.action }>
             <QuantitySelector />
             <Button
-              color='black'
+              variant='primary'
               size='medium'
               label='В корзину'
             />

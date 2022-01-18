@@ -20,6 +20,8 @@ export default function CartModal() {
         <div className={ styles.flex }>
           <h2 className={ styles.title }>Корзина</h2>
           <Button
+            className={ styles.btn }
+            variant='text'
             label='Закрыть'
             onClick={ handler }
           />

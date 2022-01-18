@@ -15,8 +15,9 @@ export default function Hero() {
         <p className={ styles.subtitle }>Мы первое кафе по приготовлению шаурмы, а также самая крупная доставка в г. Воткинске... И скоро будем самой быстрой!</p>
         <Button
         label='Перейти к витрине'
+        variant='primary'
         size='large'
-        color='secondary'
+        glowing
       />
       </Container>
     </div>

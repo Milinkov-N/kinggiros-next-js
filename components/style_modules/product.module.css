@@ -1,7 +1,6 @@
 .product {
   display: flex;
   flex-direction: column;
-  padding: 1rem;
 }
 
 .link:hover .imgWrapper {

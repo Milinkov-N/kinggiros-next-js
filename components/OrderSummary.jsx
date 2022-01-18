@@ -23,7 +23,7 @@ export default function OrderSummary({ orderDetails }) {
       </table>
       <Button
         href={ orderDetails?.checkoutUrl || '/' }
-        color='secondary'
+        variant='primary'
         label='Оформить заказ'
       />
     </div>

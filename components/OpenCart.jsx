@@ -15,7 +15,11 @@ export default function OpenCart({ className }) {
   }
 
   return (   
-    <Button className={ className } onClick={ handleOpen }>
+    <Button
+      className={ className }
+      variant='text'
+      onClick={ handleOpen }
+    >
       <FontAwesomeIcon icon={ faShoppingCart } />
       <span style={{ marginLeft: '.75rem' }}>450 RUB</span>
     </Button>

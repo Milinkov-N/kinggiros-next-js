@@ -3,9 +3,11 @@
   --clr-primary-400: #E61410;
   --clr-primary-500: #c20300;
   
+  --clr-secondary-100: #ffd13c28;
   --clr-secondary-300: #ffd23c;
   --clr-secondary-400: #FFC403;
   --clr-secondary-500: #eeb600;
+  --clr-secondary-900: #584e2d;
 
   --clr-neutral-50: #f3f3f3;
   --clr-neutral-100: #e6e6e6;
@@ -178,7 +180,57 @@ a {
   border: none;
   border-radius: 6px;
   cursor: pointer;
-  transition: .15s all ease;
+  transition: .15s all ease, .2s box-shadow ease-in-out;
+}
+
+.btn:disabled {
+  background: var(--clr-neutral-100);
+  color: var(--clr-neutral-400);
+}
+
+.btn:disabled:focus,
+.btn:disabled:hover {
+  background: var(--clr-neutral-100);
+  color: var(--clr-neutral-400);
+  cursor: default;
+}
+
+.btn-primary {
+  background: var(--clr-secondary-400);
+  color: var(--clr-secondary-900);
+}
+
+.btn-primary:hover {
+  background: var(--clr-secondary-500);
+  color: var(--clr-neutral-900);
+  box-shadow: unset;
+}
+
+.btn-primary-outlined {
+  background: transparent;
+  border: 1px solid var(--clr-secondary-400);
+  color: var(--clr-secondary-500);
+}
+
+.btn-primary-outlined:hover {
+  background: var(--clr-secondary-100);
+  border: 1px solid var(--clr-secondary-400);
+  color: var(--clr-secondary-500);
+}
+
+.btn-primary-glowing {
+  box-shadow: 0 10px 20px var(--clr-secondary-300);
+}
+
+.btn-secondary {
+  background: #000;
+  border: 1px solid #000;
+  color: #fff;
+}
+
+.btn-secondary:hover {
+  background: transparent;
+  color: #000;
 }
 
 .btn-small {
@@ -196,28 +248,9 @@ a {
   padding: .75em 1.5em;
 }
 
-.btn-white {
-  background: #fff;
-}
-
-.btn-black {
-  background: #000;
-  color: #fff;
-}
-
-.btn-primary {
-  background: var(--clr-primary-400);
-  color: #fff;
-}
-
-.btn-secondary {
-  background: var(--clr-secondary-400);
-  color: var(--clr-neutral-800);
-}
-
-.btn-secondary:hover {
-  background: var(--clr-secondary-300);
-  /* opacity: .8; */
+.btn-text {
+  background: transparent;
+  color: #000;
 }
 
 .cart {

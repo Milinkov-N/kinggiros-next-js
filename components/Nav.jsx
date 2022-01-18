@@ -46,7 +46,7 @@ const LINKS = [
   },
 ]
 
-const CloseNav = ({ className, children, includeIcon }) => {
+const CloseNav = ({ className, children, includeIcon,  href }) => {
   const { setOpened } = useNavContext()
   const handleClose = () => {
     document.body.classList.remove('scroll-lock')
@@ -62,7 +62,12 @@ const CloseNav = ({ className, children, includeIcon }) => {
   }
 
   return (
-    <Button className={ className } onClick={ handleClose }>
+    <Button
+      className={ className }
+      variant='text'
+      onClick={ handleClose }
+      href={ href }
+    >
       <RenderIcon />
       { children }
     </Button>
@@ -86,10 +91,12 @@ export default function Nav() {
           LINKS.map(link => {
             return (
               <li key={ link.name }>
-                <CloseNav className={ styles.link } includeIcon={ false }>
-                  <Link href={ link.href }>
-                    <a>{ link.name }</a>
-                  </Link>
+                <CloseNav
+                  className={ styles.link }
+                  href={ link.href }
+                  includeIcon={ false }
+                >
+                  { link.name }
                 </CloseNav>
               </li>
             )
