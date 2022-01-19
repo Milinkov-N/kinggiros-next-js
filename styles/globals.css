@@ -150,12 +150,40 @@ a {
   gap: 0.5rem;
 }
 
+.gap-2sm {
+  gap: .25rem;
+}
+
 .margin-h-auto {
   margin: 0 auto;
 }
 
 .margin-v-auto {
   margin: auto 0;
+}
+
+.margin-v-2xl {
+  margin: 5rem 0;
+}
+
+.margin-v-xl {
+  margin: 3rem 0;
+}
+
+.margin-v-lg {
+  margin: 2rem 0;
+}
+
+.margin-v-md {
+  margin: 1rem 0;
+}
+
+.margin-v-sm {
+  margin: .5rem 0;
+}
+
+.margin-v-2sm {
+  margin: .25rem 0;
 }
 
 .bor-radius-m {
