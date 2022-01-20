@@ -2,11 +2,32 @@ import Link from 'next/link'
 import Image from 'next/image'
 import Button from './ui/Button'
 import styles from './style_modules/product.module.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faLeaf, faPepperHot } from '@fortawesome/free-solid-svg-icons'
 
 export default function Product({ data }) {
 
   const product = data.node
   const price = Math.floor(product.priceRange.minVariantPrice.amount)
+
+  const { tags } = product
+
+  const setTags = (tags) => {
+    const output = []
+
+    for (const tag of tags) {
+      switch (tag) {
+        case 'spicy':
+          output.push(<FontAwesomeIcon key={ tag } className={ styles.spicy } icon={ faPepperHot } />)
+          break
+        case 'vegetarian':
+          output.push(<FontAwesomeIcon key={ tag } className={ styles.vegetarian } icon={ faLeaf } />)
+          break
+      }
+    }
+
+    return output
+  }
 
   const myLoader= ({ src, width, quality }) => `${ src }?w=${ width }&q=${ quality || 75 }`
 
@@ -27,10 +48,10 @@ export default function Product({ data }) {
           <header className={ styles.header }>
           <h3 className={ styles.title }>
             <span>{ product.title }</span>
-            {/* { setTags(tags).map( item => {
+            { setTags(tags).map( item => {
                 return item
               })
-            } */}
+            }
           </h3>
           </header>
         </a>
@@ -55,23 +76,3 @@ const getProductComposition = ( description ) => {
 
   return substring.slice(0, substringEnd).trim()
 }
-
-  // const { tags } = data
-
-  // const setTags = (tags) => {
-  //   const output = []
-
-  //   for (const tag of tags) {
-  //     switch (tag) {
-  //       case 'spicy':
-  //         output.push(<i key={ tag } aria-hidden className={ `fas fa-pepper-hot ${ styles.spicy }` }></i>)
-  //         break
-  //       case 'vegetarian':
-  //         output.push(<i key={ tag } aria-hidden className={ `fas fa-leaf ${ styles.vegetarian }` }></i>)
-  //         break
-  //     }
-  //   }
-
-  //   return output
-  // }
-  // console.log(product)

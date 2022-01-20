@@ -16,12 +16,28 @@
 }
 
 .title {
-  font-size: 1.875rem;
   margin-bottom: 0.875rem;
 }
 
+.title span {
+  color: inherit;
+  margin-right: .75rem;
+}
+
+.spicy {
+  color: #ff192d;
+  font-size: .75em;
+  margin-right: .25rem;
+}
+
+.vegetarian {
+  color: #00d440;
+  font-size: .75em;
+  margin-right: .25rem;
+}
+
 .price {
-  font-size: 1.875rem;
+  font-size: 1.5rem;
   font-weight: 500;
   margin-bottom: 1em;
 }

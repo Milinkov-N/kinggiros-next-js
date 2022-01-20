@@ -48,6 +48,7 @@ const productsQuery = `
               }
             }
           }
+          tags
           priceRange {
             minVariantPrice {
               amount

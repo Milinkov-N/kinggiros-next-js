@@ -71,6 +71,10 @@
   color: var(--clr-secondary-400);
 }
 
+.icon {
+  color: var(--clr-primary-400);
+}
+
 .controls {
   display: flex;
   align-items: center;

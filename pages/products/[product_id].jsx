@@ -7,19 +7,31 @@ import QuantitySelector from '../../components/ui/QuantitySelector'
 import productImage from '../../public/pasta.jpg'
 import { getSingleProduct, recursiveCatalog } from '../../utils'
 import { useEffect, useState } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faLeaf, faPepperHot } from '@fortawesome/free-solid-svg-icons'
 
-export default function ProductPage() {
-  const router = useRouter()
-  const { product_id } = router.query
+export default function ProductPage({ product }) {
 
-  const [product, setProduct] = useState({})
+  const { tags } = product
 
-  async function fetchProduct() {
-    const { product } = await getSingleProduct(product_id)
+  const setTags = (tags) => {
+    const output = []
 
-    setProduct(product)
+    for (const tag of tags) {
+      switch (tag) {
+        case 'spicy':
+          output.push(<FontAwesomeIcon key={ tag } className={ styles.spicy } icon={ faPepperHot } />)
+          break
+        case 'vegetarian':
+          output.push(<FontAwesomeIcon key={ tag } className={ styles.vegetarian } icon={ faLeaf } />)
+          break
+      }
+    }
+
+    return output
   }
-  useEffect(() => fetchProduct(), [])
+
+  console.log(product);
 
   return (
     <Layout>
@@ -28,7 +40,13 @@ export default function ProductPage() {
           <img src={ product?.images?.edges[0]?.node?.transformedSrc } alt="product image" />
         </div>
         <div className={ styles.info }>
-          <h2 className={ styles.title }>{ product?.title }</h2>
+          <h2 className={ `${styles.title} heading-2` }>
+            <span>{ product?.title }</span>
+            { setTags(tags).map( item => {
+                return item
+              })
+            }
+          </h2>
           <h3 className={ styles.price }>170 RUB</h3>
           <div className={ styles.description } dangerouslySetInnerHTML={{__html: product.descriptionHtml }} />
           <div className={ styles.action }>

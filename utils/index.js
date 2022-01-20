@@ -43,6 +43,7 @@ async function getSingleProduct(handle) {
             }
           }
         }
+        tags
       }
     }
   `

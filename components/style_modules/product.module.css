@@ -50,10 +50,14 @@
 
 .spicy {
   color: #ff192d;
+  font-size: 1rem;
+  margin-right: .25rem;
 }
 
 .vegetarian {
   color: #00d440;
+  font-size: 1rem;
+  margin-right: .25rem;
 }
 
 .description {
