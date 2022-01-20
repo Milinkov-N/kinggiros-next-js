@@ -29,6 +29,13 @@
   --fsz-heading-4: 1.25rem;
 }
 
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
 html,
 body {
   font-family: var(--ff-pf-square);
@@ -48,10 +55,10 @@ p {
   font-family: system-ui, sans-serif;
 }
 
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+-webkit-appearance: none; 
+ margin: 0; 
 }
 
 .scroll-lock {
