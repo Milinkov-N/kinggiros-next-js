@@ -94,6 +94,13 @@ p {
   margin-bottom: .25em;
 }
 
+.heading-1 span,
+.heading-2 span,
+.heading-3 span,
+.heading-4 span {
+  color: var(--clr-secondary-400);
+}
+
 .subheading {
   font-size: 1.125rem;
   font-weight: 500;

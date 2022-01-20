@@ -1,43 +1,19 @@
-import styles from '../../styles/contactus.module.css'
+import styles from '../../styles/aboutus.module.css'
 import Layout from '../../components/Layout'
 import Container from '../../components/Container'
 import Button from '../../components/ui/Button'
-import Stack from '../../components/layout/Stack'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faLocationArrow, faPhoneAlt, faEnvelope } from '@fortawesome/free-solid-svg-icons'
-import illustration from '../../public/about-us.svg'
+import illustration from '../../public/work.svg'
 
-export default function ContactUsPage() {
+export default function WorkPage() {
   return (
     <Layout>
       <Container>
-          <h2 className='heading-2'>Остались вопросы или нашли проблему на сайте?</h2>
+          <h2 className='heading-2'>Работа с нами</h2>
         <div className={`${ styles.content } grid-col-2 gap-xl`}>
           <div className='flex flex-col'>
             <div className={ styles.info }>
               <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium debitis tempora sapiente corrupti distinctio inventore suscipit esse voluptatum maxime perspiciatis, officia iure facilis ut impedit,</p>
-              <ul className='flex flex-col gap-sm'>
-                <li>
-                  <Stack align='center' gap='md'>
-                    <FontAwesomeIcon icon={ faLocationArrow } style={{ fontSize: '1rem' }} />
-                    г. Воткинск, улица 1 Мая, 102
-                  </Stack>
-                </li>
-                <li>
-                  <Stack align='center' gap='md'>
-                    <FontAwesomeIcon icon={ faPhoneAlt } style={{ fontSize: '1rem' }} />
-                    8 (950) 838 99 99
-                  </Stack>  
-                </li>
-                <li>
-                  <Stack align='center' gap='md'>
-                    <FontAwesomeIcon icon={ faEnvelope } style={{ fontSize: '1rem' }} />
-                    spik@mail.ru
-                  </Stack>
-                </li>
-              </ul>
             </div>
-            
             <div className={ `${ styles.form } grid-col-4 gap-md` }>
               <div className={ `${ styles.inputGroup } col-span-2` }>
                 <label className={ styles.label } htmlFor="firstname">Имя</label>
@@ -48,13 +24,24 @@ export default function ContactUsPage() {
                 <input className={ styles.input } type='text' name='secondname' placeholder='Милиньков' />
               </div>
               <div className={ `${ styles.inputGroup } col-span-4` }>
+                <label className={ styles.label } htmlFor="phone">Телефон</label>
+                <input className={ styles.input } type='phone' name='email' placeholder='8 (800) 555 35-35' />
+              </div>
+              <div className={ `${ styles.inputGroup } col-span-4` }>
                 <label className={ styles.label } htmlFor="email">Эл. почта</label>
                 <input className={ styles.input } type='email' name='email' placeholder='example@gmail.com' />
               </div>
               <div className={ `${ styles.inputGroup } col-span-4` }>
+                <label className={ styles.label } htmlFor="email">Вакансии</label>
+                <select className={ styles.input } name="vacancy" id="vacancy">
+                  <option value="kassir">Кассир</option>
+                  <option value="chief">Повар</option>
+                </select>
+              </div>
+              {/* <div className={ `${ styles.inputGroup } col-span-4` }>
                 <label className={ styles.label } htmlFor="message">Сообщение</label>
                 <textarea className={ `${ styles.input } ${ styles.textarea }` } name="message" id="message" placeholder='Ваше сообщение'></textarea>
-              </div>
+              </div> */}
               <Button className='col-span-2' color='secondary' label='Отправить' />
             </div>
           </div>
