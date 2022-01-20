@@ -32,10 +32,6 @@
   padding-top: 20vh;
 }
 
-.title {
-  font-size: 3.25rem;
-}
-
 .title span {
   color: var(--clr-primary-400);
 }
@@ -57,9 +53,10 @@
 @media (max-width: 500px) {
   .hero {
     min-height: unset;
+    text-align: left;
   }
 
   .container {
-    padding-top: 5vh;
+    padding-top: unset;
   }
 }

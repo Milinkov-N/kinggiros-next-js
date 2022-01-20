@@ -40,6 +40,14 @@ a {
   text-decoration: none;
 }
 
+li {
+  list-style: none;
+}
+
+p {
+  font-family: system-ui, sans-serif;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -288,4 +296,33 @@ a {
 .cart span {
   font-weight: 500;
   margin-left: .5em;
+}
+
+@media (max-width: 500px) {
+  .heading-1 {
+    font-size: calc(1rem + 5vw);
+  }
+
+  .heading-2 {
+    font-size: calc(.5rem + 5vw);
+    font-weight: 500;
+    margin-bottom: .25em;
+  }
+  
+  .heading-3 {
+    font-size: 1.15rem;
+    font-weight: 500;
+    margin-bottom: .25em;
+  }
+  
+  .heading-4 {
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-bottom: .25em;
+  }
+  
+  .subheading {
+    font-size: calc(.3rem + 3vw);
+    margin-bottom: .25em;
+  }
 }

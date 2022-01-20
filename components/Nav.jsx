@@ -41,6 +41,14 @@ const LINKS = [
     href: '/#tasties'
   },
   {
+    name: 'Сладкое',
+    href: '/sweets'
+  },
+  {
+    name: 'Работа',
+    href: '/work'
+  },
+  {
     name: 'Обратная связь',
     href: '/contact-us'
   },

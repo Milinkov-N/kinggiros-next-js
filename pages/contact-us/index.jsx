@@ -2,6 +2,9 @@ import styles from '../../styles/aboutus.module.css'
 import Layout from '../../components/Layout'
 import Container from '../../components/Container'
 import Button from '../../components/ui/Button'
+import Stack from '../../components/layout/Stack'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faLocationArrow, faPhoneAlt, faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import illustration from '../../public/about-us.svg'
 
 export default function ContactUsPage() {
@@ -9,10 +12,33 @@ export default function ContactUsPage() {
     <Layout>
       <Container>
           <h2 className='heading-2'>Остались вопросы или нашли проблему на сайте?</h2>
-          <span className='subheading text-clr-secondary'>Напишите нам!</span>
-        <div className='grid-col-2 gap-xl'>
+        <div className={`${ styles.content } grid-col-2 gap-xl`}>
           <div className='flex flex-col'>
-            <div className='form grid-col-4 gap-md'>
+            <div className={ styles.info }>
+              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium debitis tempora sapiente corrupti distinctio inventore suscipit esse voluptatum maxime perspiciatis, officia iure facilis ut impedit,</p>
+              <ul className='flex flex-col gap-sm'>
+                <li>
+                  <Stack align='center' gap='md'>
+                    <FontAwesomeIcon icon={ faLocationArrow } style={{ fontSize: '1rem' }} />
+                    г. Воткинск, улица 1 Мая, 102
+                  </Stack>
+                </li>
+                <li>
+                  <Stack align='center' gap='md'>
+                    <FontAwesomeIcon icon={ faPhoneAlt } style={{ fontSize: '1rem' }} />
+                    8 (950) 838 99 99
+                  </Stack>  
+                </li>
+                <li>
+                  <Stack align='center' gap='md'>
+                    <FontAwesomeIcon icon={ faEnvelope } style={{ fontSize: '1rem' }} />
+                    spik@mail.ru
+                  </Stack>
+                </li>
+              </ul>
+            </div>
+            
+            <div className={ `${ styles.form } grid-col-4 gap-md` }>
               <div className={ `${ styles.inputGroup } col-span-2` }>
                 <label className={ styles.label } htmlFor="firstname">Имя</label>
                 <input className={ styles.input } type='text' name='firstname' placeholder='Никита' />
@@ -33,9 +59,7 @@ export default function ContactUsPage() {
             </div>
           </div>
           <div className='flex jc-center ai-center'>
-            <div className="svg-container">
               <img src={ illustration.src } alt="illustration" />
-            </div>
           </div>
         </div>
       </Container>

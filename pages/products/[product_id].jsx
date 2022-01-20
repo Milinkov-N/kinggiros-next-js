@@ -21,8 +21,6 @@ export default function ProductPage() {
   }
   useEffect(() => fetchProduct(), [])
 
-  console.log(product)
-
   return (
     <Layout>
       <Container className={ styles.grid }>

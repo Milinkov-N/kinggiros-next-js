@@ -11,8 +11,8 @@ export default function Hero() {
         {/* <Image priority src={ heroImg } alt='hero backgound image'></Image> */}
       </div>
       <Container className={ styles.container }>
-        <h1 className={ styles.title }>Вкуснейшие еда и напитки в <span>King Giros</span></h1>
-        <p className={ styles.subtitle }>Мы первое кафе по приготовлению шаурмы, а также самая крупная доставка в г. Воткинске... И скоро будем самой быстрой!</p>
+        <h1 className={`heading-1 ${ styles.title }`}>Вкуснейшие еда и напитки в <span>King Giros</span></h1>
+        <p className='subheading'>Мы первое кафе по приготовлению шаурмы, а также самая крупная доставка в г. Воткинске... И скоро будем самой быстрой!</p>
         <Button
         label='Перейти к витрине'
         variant='primary'

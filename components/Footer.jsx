@@ -11,10 +11,9 @@ import Link from 'next/link'
 
 
 export default function Footer() {
-  console.log(Logo);
   const logoWidth = 120
   const logoHeight = Logo.height / (Logo.width / logoWidth)
-  console.log(logoHeight);
+  
   return (
     <footer className={ styles.footer }>
       <Container>
@@ -31,19 +30,16 @@ export default function Footer() {
               <a href="/">
                 <FontAwesomeIcon icon={ faTelegramPlane } style={{ fontSize: '1.25rem' }} />
               </a>
-              
             </Stack>
           </Stack>
           <div className={ styles.list }>
             <h2 className='heading-3'>Связаться с нами</h2>
             <ul className='flex flex-col gap-2sm'>
               <li>
-                <Link href='/about-us'>
-                  <Stack align='center' gap='sm'>
-                    <FontAwesomeIcon icon={ faLocationArrow } style={{ fontSize: '.8rem' }} />
-                    г. Воткинск, улица 1 Мая, 102
-                  </Stack>
-                </Link>
+                <Stack align='center' gap='sm'>
+                  <FontAwesomeIcon icon={ faLocationArrow } style={{ fontSize: '.8rem' }} />
+                  г. Воткинск, улица 1 Мая, 102
+                </Stack>
               </li>
               <li>
                 <Stack align='center' gap='sm'>
