@@ -3,6 +3,8 @@ import styles from './originalheader.module.css'
 import logoImg from '../../public/logo.png'
 import Container from '../Container'
 import Button from '../ui/Button'
+import OpenCart from '../OpenCart'
+import { OpenNav } from '../Header'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPhoneAlt } from '@fortawesome/free-solid-svg-icons'
 
@@ -44,6 +46,7 @@ const Delivery = () => {
 const Controls = () => {
   return (
     <div className={ styles.controls }>
+      <OpenCart className={ styles.cart } />
       <Button
         variant='secondary'
         label='Войти'
@@ -57,6 +60,7 @@ const OriginalHeader = () => {
   return (
     <header  className={ styles.header }>
       <Container className={ styles.container }>
+        <OpenNav className={ styles.openNav } />
         <Title />
         <Logo />
         <Delivery />

@@ -36,7 +36,7 @@ const Delivery = () => {
   )
 }
 
-const OpenNav = () => {
+const OpenNav = ({ className }) => {
   const { setOpened } = useNavContext()
   const handleOpen = () => {
     document.body.classList.add('scroll-lock')
@@ -44,7 +44,7 @@ const OpenNav = () => {
   }
 
   return (
-    <Button className={ styles.openNav } variant='text' onClick={ handleOpen }>
+    <Button className={ `${ styles.openNav } ${ className }` } variant='text' onClick={ handleOpen }>
       <FontAwesomeIcon icon={ faBars } />
     </Button>
   )
@@ -70,4 +70,4 @@ const Header = () => {
   )
 }
 
-export { Header, Logo, Delivery }  
+export { Header, Logo, Delivery, OpenNav }  

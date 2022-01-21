@@ -45,6 +45,10 @@ const LINKS = [
     href: '/sweets'
   },
   {
+    name: 'Комбо',
+    href: '/combo'
+  },
+  {
     name: 'Работа',
     href: '/work'
   },

@@ -82,3 +82,66 @@
   gap: 1rem;
   grid-area: controls;
 }
+
+.openNav {
+  width: fit-content;
+  color: #fff;
+  grid-area: open-nav;
+}
+
+.cart {
+  display: none;
+  padding: unset;
+  margin-left: auto;
+  color: #fff;
+}
+
+@media (max-width: 950px) {
+  .header {
+    position: sticky;
+    top: 0;
+    box-shadow: 0 0 15px rgba(0 0 0 / .1);
+    z-index: 9999;
+  }
+
+  .container {
+    grid-template-areas:
+      'open-nav open-nav logo controls controls';
+  }
+
+  .title {
+    display: none;
+  }
+
+  .delivery {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .cart {
+    display: inline-block;
+  }
+}
+
+@media (max-width: 700px) {
+  .header {
+    padding: .5rem 0;
+  }
+
+  .logo {
+    height: 80px;
+  }
+}
+
+@media (max-width: 560px) {
+  .controls button:not(.cart) {
+    display: none;
+  }
+}
+
+@media (max-width: 530px) {
+  .logo {
+    height: 70px;
+  }
+}
