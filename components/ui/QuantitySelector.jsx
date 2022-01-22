@@ -8,7 +8,7 @@ export default function QuantitySelector() {
 
   const inputRef = useRef()
   useEffect(() => {
-    inputRef?.current?.value = quantity
+    inputRef.current.value = quantity
   },[quantity])
 
   const increment = () => setQuantity(quantity => quantity + 1)
@@ -16,6 +16,7 @@ export default function QuantitySelector() {
     if (quantity === 1) return 1
     return quantity - 1
   })
+
   return (
     <div className={ styles.quantity }>
       <button className={ `${ styles.quantityElem } ${ styles.btn }` } onClick={ decrement }>

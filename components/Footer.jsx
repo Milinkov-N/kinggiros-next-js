@@ -21,15 +21,21 @@ export default function Footer() {
           <Stack direction='col' align='center' gap='sm'>
             <Image src={ Logo } width={ logoWidth } height={ logoHeight } />
             <Stack className={ styles.socials } justify='space-between'>
-              <a href="/">
-                <FontAwesomeIcon icon={ faVk } style={{ fontSize: '1.25rem' }} />
-              </a>
-              <a href="/">
-                <FontAwesomeIcon icon={ faInstagram } style={{ fontSize: '1.25rem' }} />
-              </a>
-              <a href="/">
-                <FontAwesomeIcon icon={ faTelegramPlane } style={{ fontSize: '1.25rem' }} />
-              </a>
+              <Link href='/'>
+                <a>
+                  <FontAwesomeIcon icon={ faVk } style={{ fontSize: '1.25rem' }} />
+                </a>
+              </Link>
+              <Link href='/'>
+                <a>
+                  <FontAwesomeIcon icon={ faInstagram } style={{ fontSize: '1.25rem' }} />
+                </a>
+              </Link>
+              <Link href='/'>
+                <a>
+                  <FontAwesomeIcon icon={ faTelegramPlane } style={{ fontSize: '1.25rem' }} />
+                </a>
+              </Link>
             </Stack>
           </Stack>
           <div className={ styles.list }>

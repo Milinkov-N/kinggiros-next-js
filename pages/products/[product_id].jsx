@@ -1,12 +1,9 @@
-import { useRouter } from 'next/router'
 import Layout from '../../components/Layout'
 import Container from '../../components/Container'
 import styles from '../../styles/productpage.module.css'
 import Button from '../../components/ui/Button'
 import QuantitySelector from '../../components/ui/QuantitySelector'
-import productImage from '../../public/pasta.jpg'
 import { getSingleProduct, recursiveCatalog } from '../../utils'
-import { useEffect, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLeaf, faPepperHot } from '@fortawesome/free-solid-svg-icons'
 
@@ -30,8 +27,6 @@ export default function ProductPage({ product }) {
 
     return output
   }
-
-  console.log(product);
 
   return (
     <Layout>
