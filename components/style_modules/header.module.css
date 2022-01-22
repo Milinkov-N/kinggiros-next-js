@@ -85,6 +85,12 @@
   margin-left: auto;
 }
 
+@media (max-width: 1130px) {
+  .openNav {
+    display: inline-block;
+  }
+}
+
 @media (max-width: 900px) {
   .header {
     position: sticky;
@@ -98,10 +104,6 @@
 
   .btnWrapper {
     margin-left: 1.5rem;
-  }
-
-  .openNav {
-    display: inline-block;
   }
 }
 

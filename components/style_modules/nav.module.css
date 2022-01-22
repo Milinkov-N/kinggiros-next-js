@@ -58,7 +58,7 @@
   margin-left: auto;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1130px) {
   .navigation {
     position: fixed;
     top: 0;
