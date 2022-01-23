@@ -1,8 +1,6 @@
-import Link from 'next/link'
 import styles from './style_modules/nav.module.css'
 import Container from './Container'
 import Button from './ui/Button'
-import Stack from './layout/Stack'
 import useNavContext from '../contexts/NavContext'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes } from '@fortawesome/free-solid-svg-icons'

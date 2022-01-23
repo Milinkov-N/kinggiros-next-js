@@ -2,9 +2,10 @@
   position: fixed;
   top: 0;
   right: 0;
-  width: 400px;
+  width: 380px;
   height: 100vh;
-  background: #fff;
+  padding: 0 11px;
+  background: var(--clr-neutral-50);
   box-shadow: 0 0 15px rgba(0 0 0 / .1);
   z-index: 9999;
   transition: .4s right ease;
@@ -19,8 +20,9 @@
 }
 
 .title {
-  font-size: var(--fsz-heading-2);
-  font-weight: 500;
+  font-size: 1.75rem;
+  font-weight: 400;
+  color: var(--clr-neutral-800);
 }
 
 .grid {
@@ -34,7 +36,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.25rem 1.25rem;
+  padding: .75rem 0;
 }
 
 .btn {

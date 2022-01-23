@@ -17,18 +17,24 @@ export default function CartModal() {
   return (
     <div className={ `${ styles.cartModal } ${ openedClass  }` }>
       <div className={ styles.grid }>
-        <div className={ styles.flex }>
-          <h2 className={ styles.title }>Корзина</h2>
-          <Button
-            className={ styles.btn }
-            variant='text'
-            label='Закрыть'
-            onClick={ handler }
-          />
-        </div>
+        <CartModalHeader handler={ handler } />
         <CartList />
         <OrderSummary />
       </div>
+    </div>
+  )
+}
+
+function CartModalHeader({ handler }) {
+  return (
+    <div className={ styles.flex }>
+      <h2 className={ styles.title }>Корзина</h2>
+      <Button
+        className={ styles.btn }
+        variant='text'
+        label='Закрыть'
+        onClick={ handler }
+      />
     </div>
   )
 }

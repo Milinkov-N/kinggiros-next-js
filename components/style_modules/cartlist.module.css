@@ -1,15 +1,32 @@
 .itemsList {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2rem;
-  padding: .25rem 1.25rem;
+  gap: 1rem;
+  margin-bottom: .5rem;
   overflow: scroll;
+}
+
+.itemsList::-webkit-scrollbar {
+  width: 4px;
+  padding: 0 .5px;
+}
+
+.itemsList::-webkit-scrollbar-thumb {
+  background-color: var(--clr-neutral-300);
+  border-radius: 20px;
+}
+
+.itemsList::-webkit-scrollbar-corner {
+  visibility: hidden;
 }
 
 .item {
   position: relative;
   display: flex;
   align-items: center;
+  background: #fff;
+  border-radius: 6px;
+  padding: .5rem;
 }
 
 .item img {
@@ -19,6 +36,7 @@
 }
 
 .itemInfo {
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -46,8 +64,8 @@
 
 .deleteItemBtn {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: .5rem;
+  right: .5rem;
   background: none;
   border: none;
   font-size: 1rem;
