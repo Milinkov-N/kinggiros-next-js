@@ -4,9 +4,10 @@ import Button from './ui/Button'
 import styles from './style_modules/product.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLeaf, faPepperHot } from '@fortawesome/free-solid-svg-icons'
+import { useCartItems } from '../src/contexts/CartContext'
 
 export default function Product({ data }) {
-
+  const [, setItems] = useCartItems()
   const product = data.node
   const price = Math.floor(product.priceRange.minVariantPrice.amount)
 
@@ -28,6 +29,10 @@ export default function Product({ data }) {
 
     return output
   }
+
+  const handleAddToCart = () => setItems(items => {
+    return [...items, product]
+  })
 
   return (
     <div className={ styles.product }>
@@ -57,7 +62,11 @@ export default function Product({ data }) {
       <p className={ styles.description }>{ getProductComposition(product.description) }</p>
       <footer className={ styles.footer }>
         <p className="product-price">{ `${ price } RUB` }</p>
-        <Button variant='primary' label='В корзину' />
+        <Button
+          variant='primary'
+          label='В корзину'
+          onClick={ handleAddToCart }
+        />
       </footer>
     </div>
   )

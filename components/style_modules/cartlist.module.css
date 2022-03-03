@@ -1,6 +1,7 @@
 .itemsList {
   display: grid;
   grid-template-columns: 1fr;
+  grid-template-rows: repeat(6, 90px);
   gap: 1rem;
   margin-bottom: .5rem;
   overflow: scroll;

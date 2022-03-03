@@ -5,8 +5,7 @@ export default function useCartReducer() {
     isOpened: false,
     total: 0,
     subTotal: 0,
-    shipping: 0,
-    items: []
+    shipping: 0
   }
 
   function cartReducer(state, action) {
