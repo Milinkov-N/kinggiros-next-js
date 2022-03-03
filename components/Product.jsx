@@ -29,8 +29,6 @@ export default function Product({ data }) {
     return output
   }
 
-  const myLoader= ({ src, width, quality }) => `${ src }?w=${ width }&q=${ quality || 75 }`
-
   return (
     <div className={ styles.product }>
       <Link href={ `/products/${product.handle}` }>
@@ -38,11 +36,11 @@ export default function Product({ data }) {
           <div className={ styles.imgWrapper }>
             <Image 
               priority
-              loader= { myLoader } 
+              className={ styles.img }
               src={ `${ product.images.edges[0].node.transformedSrc }` }
-              width={ 500 } 
-              height={ 500 } 
-              alt={ product.title } 
+              alt={ product.title }
+              layout='fill'
+              objectFit='contain' 
             />
           </div>
           <header className={ styles.header }>

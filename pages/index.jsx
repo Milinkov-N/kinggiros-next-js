@@ -33,7 +33,7 @@ export async function getStaticProps() {
 
 const productsQuery = `
   query Products {
-    products(first: 3) {
+    products(first: 250) {
       edges {
         node {
           id

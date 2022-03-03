@@ -80,11 +80,6 @@ export default function Footer() {
             <h2 className='heading-3'>Информация</h2>
             <ul className='flex flex-col gap-2sm'>
               <li>
-                <Link href='/help'>
-                  <a>Помощь</a>
-                </Link>
-              </li>
-              <li>
                 <Link href='/contact-us'>
                   <a>Связаться с нами</a>
                 </Link>

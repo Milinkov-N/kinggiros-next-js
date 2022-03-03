@@ -12,12 +12,10 @@
 }
 
 .imgWrapper {
-  border-radius: 10px;
+  position: relative;
+  width: 100%;
+  height: 300px;
   transition: .2s transform ease;
-}
-
-.imgWrapper img {
-  border-radius: 6px;
 }
 
 .header {
