@@ -8,6 +8,7 @@ export default function useCartContext() {
 
 export const CartProvider = ({ children }) => {
   const [opened, setOpened] = useState(false)
+  
   return (
     <CartContext.Provider value={{ opened, setOpened }}>
       { children }

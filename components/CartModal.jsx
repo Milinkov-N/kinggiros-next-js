@@ -2,20 +2,20 @@ import styles from './style_modules/cartmodal.module.css'
 import OrderSummary from './OrderSummary'
 import CartList from './CartList'
 import Button from './ui/Button'
-import useCartContext from '../contexts/CartContext'
+import { useCart } from '../src/contexts/CartContext' 
 
 export default function CartModal() {
-  const { opened, setOpened } = useCartContext()
+  const [state, dispatch] = useCart()
 
   const handler = () => {
     document.body.classList.remove('scroll-lock')
-    setOpened(false)
+    dispatch({ type: 'SET_CLOSED' })
   }
 
-  const openedClass = opened ? styles.opened : styles.closed
+  const openedClass = state.isOpened ? styles.opened : styles.closed
 
   return (
-    <div className={ `${ styles.cartModal } ${ openedClass  }` }>
+    <div className={ `${ styles.cartModal } ${ openedClass }` }>
       <div className={ styles.grid }>
         <CartModalHeader handler={ handler } />
         <CartList />

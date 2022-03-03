@@ -1,16 +1,16 @@
 import Button from './ui/Button'
-import useCartContext from '../contexts/CartContext'
 import useNavContext from '../contexts/NavContext'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
+import { useCartDispatch } from '../src/contexts/CartContext'
 
 export default function OpenCart({ className }) {
-  const { setOpened: cartSetOpened } = useCartContext()
+  const dispatch = useCartDispatch()
   const { setOpened: navSetOpened } = useNavContext()
 
   const handleOpen = () => {
     document.body.classList.add('scroll-lock')
-    cartSetOpened(true)
+    dispatch({ type: 'SET_OPEN' })
     navSetOpened(false)
   }
 

@@ -1,5 +1,5 @@
 import { NavProvider } from '../contexts/NavContext'
-import { CartProvider } from '../contexts/CartContext'
+import CartProvider from '../src/contexts/CartContext'
 import styles from './style_modules/layout.module.css'
 // import { Header } from './Header'
 import { OriginalHeader } from './archive/originalHeader'
