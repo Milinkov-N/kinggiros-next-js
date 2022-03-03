@@ -14,7 +14,16 @@ export default function Home({ products }) {
       </Head>
       <Layout>
         <Hero />
-        <CollectionList products={ products } />
+        <CollectionList
+          products={ products }
+          title='Шаурма'
+          sortBy={{ tag: 'shaurma' }}
+        />
+        <CollectionList
+          products={ products }
+          title='Суши-сеты'
+          sortBy={{ tag: 'sushi_set' }}
+        />
       </Layout>
     </>
     
