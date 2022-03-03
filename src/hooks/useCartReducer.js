@@ -2,7 +2,11 @@ import { useReducer } from 'react'
 
 export default function useCartReducer() {
   const initState = {
-    isOpened: false
+    isOpened: false,
+    total: 0,
+    subTotal: 0,
+    shipping: 0,
+    items: []
   }
 
   function cartReducer(state, action) {

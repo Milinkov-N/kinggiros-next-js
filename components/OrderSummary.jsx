@@ -1,7 +1,10 @@
 import styles from './style_modules/ordersummary.module.css'
 import Button from './ui/Button'
+import { useCartState } from '../src/contexts/CartContext'
 
 export default function OrderSummary({ orderDetails }) {
+  const state = useCartState()
+
   return (
     <>
       <div className={ styles.orderSummary }>
@@ -10,15 +13,15 @@ export default function OrderSummary({ orderDetails }) {
           <tbody>
             <tr className={ styles.tableRow }>
               <td>Подытог</td>
-              <td>{ orderDetails?.subtotal || '420 RUB' }</td>
+              <td>{ orderDetails?.subtotal || `${ state.subTotal } RUB` }</td>
             </tr>
             <tr className={ styles.tableRow }>
               <td>Доставка</td>
-              <td>400 RUB</td>
+              <td>{ state.shipping } RUB</td>
             </tr>
             <tr className={ styles.tableRow }>
               <td>Итого</td>
-              <td>{ orderDetails?.total || '228 RUB' }</td>
+              <td>{ orderDetails?.total || `${ state.total } RUB` }</td>
             </tr>
           </tbody>
         </table>
