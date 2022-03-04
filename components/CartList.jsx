@@ -23,7 +23,7 @@ export const CartItem = ({ item }) => {
   )
 }
 
-export default function CartList({ items }) {
+export default function CartList() {
   const [items] = useCartItems()
   return (
     // <div className="items-list">{ 

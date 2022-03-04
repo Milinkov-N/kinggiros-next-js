@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import styles from './originalheader.module.css'
-import logoImg from '../../public/logo.png'
+import logoImg from '../../public/logo_2022.png'
 import Container from '../Container'
 import Button from '../ui/Button'
 import OpenCart from '../OpenCart'
