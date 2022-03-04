@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLeaf, faPepperHot } from '@fortawesome/free-solid-svg-icons'
 
@@ -7,6 +8,15 @@ import { useCartDispatch } from '../contexts/CartContext'
 export default function useProduct(product, styles) {
   const [, setItems] = useCartItems()
   const dispatch = useCartDispatch()
+
+  const [quantity, setQuantity] = useState(1)
+
+  // const increment = () => setQuantity(quantity => quantity + 1)
+  // const decrement = () => setQuantity(quantity => {
+  //   if (quantity === 1) return 1
+  //   return quantity - 1
+  // })
+
   const price = Math.floor(product.priceRange.minVariantPrice.amount)
 
   const setTags = (tags) => {
@@ -40,7 +50,7 @@ export default function useProduct(product, styles) {
     return output
   }
 
-  const handleAddToCart = (productId) => {
+  const handleAddToCart = (productId, quantity) => {
     setItems(items => {
       let sameItemindex
       const isSameItem = items.find((el, index) => {
@@ -61,16 +71,22 @@ export default function useProduct(product, styles) {
 
       return [...newArr, {
         ...product,
-        amount: items[sameItemindex].amount++
+        amount: quantity ? quantity : items[sameItemindex].amount++
       }]
     })
-    dispatch({ type: 'ADD_TO_SUBTOTAL', payload: price })
+    
+    dispatch({
+      type: 'ADD_TO_SUBTOTAL',
+      payload: quantity ? price * quantity : price 
+    })
   }
 
   return {
     product,
     price,
     setTags,
-    handleAddToCart
+    handleAddToCart,
+    quantity,
+    setQuantity
   }
 }

@@ -7,7 +7,12 @@ import { getSingleProduct, recursiveCatalog } from '../../utils'
 import useProduct from '../../src/hooks/useProduct'
 
 export default function ProductPage({ product }) {
-  const { handleAddToCart, setTags } = useProduct(product, styles)
+  const {
+    handleAddToCart,
+    setTags,
+    quantity,
+    setQuantity
+  } = useProduct(product, styles)
 
   return (
     <Layout>
@@ -24,14 +29,20 @@ export default function ProductPage({ product }) {
             }
           </h2>
           <h3 className={ styles.price }>170 RUB</h3>
-          <div className={ styles.description } dangerouslySetInnerHTML={{__html: product.descriptionHtml }} />
+          <div className={ styles.description } dangerouslySetInnerHTML={{ __html: product.descriptionHtml }} />
           <div className={ styles.action }>
-            <QuantitySelector />
+            <QuantitySelector
+              quantity={ quantity }
+              setQuantity={ setQuantity }
+            />
             <Button
               variant='primary'
               size='medium'
               label='В корзину'
-              onClick={ () => handleAddToCart(product.id) }
+              onClick={ () => {
+                handleAddToCart(product.id, quantity)
+                setQuantity(1)
+              }}
             />
           </div>
         </div>

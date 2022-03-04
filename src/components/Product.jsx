@@ -10,7 +10,7 @@ export default function Product({ data }) {
     product,
     price,
     setTags,
-    handleAddToCart
+    handleAddToCart,
   } = useProduct(data.node, styles)
 
   return (

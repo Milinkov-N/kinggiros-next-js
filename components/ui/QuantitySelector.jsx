@@ -3,8 +3,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons'
 import { useState } from 'react'
 
-export default function QuantitySelector() {
-  const [quantity, setQuantity] = useState(1)
+export default function QuantitySelector({ quantity, setQuantity }) {
+  // const [quantity, setQuantity] = useState(1)
 
   const increment = () => setQuantity(quantity => quantity + 1)
   const decrement = () => setQuantity(quantity => {
