@@ -59,12 +59,9 @@ export default function useProduct(product, styles) {
         return el.id === productId
       })
 
-      console.log(isSameItem);
-      console.log(sameItemindex);
-
       if (!isSameItem) return [...items, {
         ...product,
-        amount: 1
+        amount: quantity ? quantity : 1
       }]
 
       const newArr = items.filter(el => el.id !== productId)

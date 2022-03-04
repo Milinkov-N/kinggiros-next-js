@@ -22,7 +22,7 @@ export default function OpenCart({ className }) {
     >
       <FontAwesomeIcon icon={ faShoppingCart } />
       <span style={{ marginLeft: '.75rem' }}>
-        { `${ state.total } RUB` }
+        { `${ state.subtotal } RUB` }
       </span>
     </Button>
   )

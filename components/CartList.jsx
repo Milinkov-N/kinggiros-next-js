@@ -12,7 +12,8 @@ export const CartItem = ({ item }) => {
   const deleteItem = (id) => {
     setItems(items => {
       const item = items.find(el => el.id === id)
-      dispatch({ type: 'REMOVE_FROM_SUBTOTAL', payload: item.priceRange.minVariantPrice.amount })
+      console.log(item);
+      dispatch({ type: 'REMOVE_FROM_SUBTOTAL', payload: item.priceRange.minVariantPrice.amount * item.amount })
 
       const newArr = items.filter(el => el.id !== id)
 
