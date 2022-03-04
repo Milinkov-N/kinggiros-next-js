@@ -4,33 +4,10 @@ import styles from '../../styles/productpage.module.css'
 import Button from '../../components/ui/Button'
 import QuantitySelector from '../../components/ui/QuantitySelector'
 import { getSingleProduct, recursiveCatalog } from '../../utils'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faLeaf, faPepperHot } from '@fortawesome/free-solid-svg-icons'
 import useProduct from '../../src/hooks/useProduct'
 
 export default function ProductPage({ product }) {
-  const { tags } = product
-
-  console.log(product);
-
-  const setTags = (tags) => {
-    const output = []
-
-    for (const tag of tags) {
-      switch (tag) {
-        case 'spicy':
-          output.push(<FontAwesomeIcon key={ tag } className={ styles.spicy } icon={ faPepperHot } />)
-          break
-        case 'vegetarian':
-          output.push(<FontAwesomeIcon key={ tag } className={ styles.vegetarian } icon={ faLeaf } />)
-          break
-      }
-    }
-
-    return output
-  }
-
-  const { handleAddToCart } = useProduct(product, styles)
+  const { handleAddToCart, setTags } = useProduct(product, styles)
 
   return (
     <Layout>
@@ -41,7 +18,7 @@ export default function ProductPage({ product }) {
         <div className={ styles.info }>
           <h2 className={ `${styles.title} heading-2` }>
             <span>{ product?.title }</span>
-            { setTags(tags).map( item => {
+            { setTags(product.tags).map( item => {
                 return item
               })
             }
