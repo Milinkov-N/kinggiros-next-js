@@ -41,8 +41,30 @@ export default function useProduct(data, styles) {
     return output
   }
 
-  const handleAddToCart = () => {
-    setItems(items => [...items, product])
+  const handleAddToCart = (productId) => {
+    setItems(items => {
+      let sameItemindex
+      const isSameItem = items.find((el, index) => {
+        if (el.id === productId) sameItemindex = index
+
+        return el.id === productId
+      })
+
+      console.log(isSameItem);
+      console.log(sameItemindex);
+
+      if (!isSameItem) return [...items, {
+        ...product,
+        amount: 1
+      }]
+
+      const newArr = items.filter(el => el.id !== productId)
+
+      return [...newArr, {
+        ...product,
+        amount: items[sameItemindex].amount++
+      }]
+    })
     dispatch({ type: 'ADD_TO_SUBTOTAL', payload: price })
   }
 

@@ -43,7 +43,7 @@ export default function Product({ data }) {
         <Button
           variant='primary'
           label='В корзину'
-          onClick={ handleAddToCart }
+          onClick={ () => handleAddToCart(product.id) }
         />
       </div>
     </div>

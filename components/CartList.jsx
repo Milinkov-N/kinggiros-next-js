@@ -2,7 +2,6 @@ import styles from './style_modules/cartlist.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes } from '@fortawesome/free-solid-svg-icons'
 import QuantitySelector from './ui/QuantitySelector'
-import itemImg from '../public/pasta.jpg'
 import { useCartItems } from '../src/contexts/CartContext'
 
 export const CartItem = ({ item }) => {
@@ -29,7 +28,6 @@ export default function CartList() {
     <div className={ styles.itemsList }>
       {
         items.map(item => {  
-          console.log(item)
           const itemInfo = {
             id: item.id,
             handle: item.handle,
