@@ -13,7 +13,7 @@ export default function OrderSummary({ orderDetails }) {
           <tbody>
             <tr className={ styles.tableRow }>
               <td>Подытог</td>
-              <td>{ orderDetails?.subtotal || `${ state.subTotal } RUB` }</td>
+              <td>{ orderDetails?.subtotal || `${ state.subtotal } RUB` }</td>
             </tr>
             <tr className={ styles.tableRow }>
               <td>Доставка</td>

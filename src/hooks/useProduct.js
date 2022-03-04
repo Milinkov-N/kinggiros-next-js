@@ -2,10 +2,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLeaf, faPepperHot } from '@fortawesome/free-solid-svg-icons'
 
 import { useCartItems } from '../contexts/CartContext'
+import { useCartDispatch } from '../contexts/CartContext'
 
 export default function useProduct(data, styles) {
   const product = data.node
   const [, setItems] = useCartItems()
+  const dispatch = useCartDispatch()
   const price = Math.floor(product.priceRange.minVariantPrice.amount)
 
   const setTags = (tags) => {
@@ -39,7 +41,10 @@ export default function useProduct(data, styles) {
     return output
   }
 
-  const handleAddToCart = () => setItems(items => [...items, product])
+  const handleAddToCart = () => {
+    setItems(items => [...items, product])
+    dispatch({ type: 'ADD_TO_SUBTOTAL', payload: price })
+  }
 
   return {
     product,
