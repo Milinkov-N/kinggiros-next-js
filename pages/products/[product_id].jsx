@@ -6,10 +6,12 @@ import QuantitySelector from '../../components/ui/QuantitySelector'
 import { getSingleProduct, recursiveCatalog } from '../../utils'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLeaf, faPepperHot } from '@fortawesome/free-solid-svg-icons'
+import useProduct from '../../src/hooks/useProduct'
 
 export default function ProductPage({ product }) {
-
   const { tags } = product
+
+  console.log(product);
 
   const setTags = (tags) => {
     const output = []
@@ -27,6 +29,8 @@ export default function ProductPage({ product }) {
 
     return output
   }
+
+  const { handleAddToCart } = useProduct(product, styles)
 
   return (
     <Layout>
@@ -50,6 +54,7 @@ export default function ProductPage({ product }) {
               variant='primary'
               size='medium'
               label='В корзину'
+              onClick={ () => handleAddToCart(product.id) }
             />
           </div>
         </div>

@@ -11,7 +11,7 @@ export default function Product({ data }) {
     price,
     setTags,
     handleAddToCart
-  } = useProduct(data, styles)
+  } = useProduct(data.node, styles)
 
   return (
     <div className={ styles.product }>

@@ -4,8 +4,7 @@ import { faLeaf, faPepperHot } from '@fortawesome/free-solid-svg-icons'
 import { useCartItems } from '../contexts/CartContext'
 import { useCartDispatch } from '../contexts/CartContext'
 
-export default function useProduct(data, styles) {
-  const product = data.node
+export default function useProduct(product, styles) {
   const [, setItems] = useCartItems()
   const dispatch = useCartDispatch()
   const price = Math.floor(product.priceRange.minVariantPrice.amount)
