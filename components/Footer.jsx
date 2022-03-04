@@ -1,5 +1,5 @@
 import styles from './style_modules/footer.module.css'
-import Logo from '../public/logo.png'
+import Logo from '../public/logo_2022.png'
 import Container from '../components/Container'
 import Stack from './layout/Stack'
 import Image from 'next/image'

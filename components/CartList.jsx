@@ -8,7 +8,7 @@ import { useCartItems } from '../src/contexts/CartContext'
 export const CartItem = ({ item }) => {
   return (
     <div className={ styles.item }>
-      <img src={ itemImg.src } alt="item image" />
+      <img src={ item.img } alt="item image" />
       <div className={ styles.itemInfo }>
         <h3 className={ styles.itemName }>{ item.title }</h3>
         <div className={ styles.flex }>
@@ -26,50 +26,22 @@ export const CartItem = ({ item }) => {
 export default function CartList() {
   const [items] = useCartItems()
   return (
-    // <div className="items-list">{ 
-    //   items.map(item => {
-    //     const { node } = item
-
-    //     const itemInfo = {
-    //       id: node.id,
-    //       handle: node.merchandise.product.handle,
-    //       title: node.merchandise.product.title,
-    //       quantity: node.quantity,
-    //       estimatedCost: `${Math.floor(node.estimatedCost.totalAmount.amount)} ${node.estimatedCost.totalAmount.currencyCode}`
-    //     }
-
-    //     return <CartItem item={ itemInfo } key={ node.id } />
-    //   })
-    // }</div>
     <div className={ styles.itemsList }>
       {
         items.map(item => {  
+          console.log(item)
           const itemInfo = {
             id: item.id,
             handle: item.handle,
             title: item.title,
             quantity: 1,
-            price: item.priceRange.minVariantPrice.amount
+            price: item.priceRange.minVariantPrice.amount,
+            img: item.images.edges[0].node.transformedSrc
           }
   
           return <CartItem item={ itemInfo } key={ item.id } />
         })
       }
-      <div className={ styles.item }>
-        <img src={ itemImg.src } alt="item image" />
-        <div className={ styles.itemInfo }>
-          <h3 className={ styles.itemName }>Шаурма Стандарт</h3>
-          <div className={ styles.flex }>
-            <QuantitySelector />
-            <span className={ styles.itemPrice }>450 RUB</span>
-          </div>              
-        </div>
-        <button
-          className={ styles.deleteItemBtn }
-        >
-          <FontAwesomeIcon icon={ faTimes } />
-        </button>
-      </div>
     </div>
   )
 }

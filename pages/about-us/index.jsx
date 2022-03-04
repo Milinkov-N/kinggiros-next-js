@@ -1,7 +1,7 @@
 import styles from '../../styles/aboutus.module.css'
 import Container from '../../components/Container'
 import Layout from '../../components/Layout'
-import Logo from '../../public/logo.png'
+import Logo from '../../public/logo_2022.png'
 import shaurmaImage from '../../public/shaurmaC.png'
 import hotdogImage from '../../public/hot-dogC.png'
 

@@ -2,10 +2,10 @@ import Button from './ui/Button'
 import useNavContext from '../contexts/NavContext'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
-import { useCartDispatch } from '../src/contexts/CartContext'
+import { useCart } from '../src/contexts/CartContext'
 
 export default function OpenCart({ className }) {
-  const dispatch = useCartDispatch()
+  const [state, dispatch] = useCart()
   const { setOpened: navSetOpened } = useNavContext()
 
   const handleOpen = () => {
@@ -21,7 +21,9 @@ export default function OpenCart({ className }) {
       onClick={ handleOpen }
     >
       <FontAwesomeIcon icon={ faShoppingCart } />
-      <span style={{ marginLeft: '.75rem' }}>450 RUB</span>
+      <span style={{ marginLeft: '.75rem' }}>
+        { `${ state.total } RUB` }
+      </span>
     </Button>
   )
 }
