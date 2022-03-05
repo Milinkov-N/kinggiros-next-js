@@ -21,7 +21,7 @@ export default function Product({ data }) {
             <Image 
               priority
               className={ styles.img }
-              src={ `${ product.images.edges[0].node.transformedSrc }` }
+              src={ `${ product.images?.edges[0]?.node.transformedSrc || '/' }` }
               alt={ product.title }
               layout='fill'
               objectFit='contain' 

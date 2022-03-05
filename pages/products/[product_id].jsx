@@ -28,7 +28,7 @@ export default function ProductPage({ product }) {
               })
             }
           </h2>
-          <h3 className={ styles.price }>170 RUB</h3>
+          <h3 className={ styles.price }>{ `${ Math.floor(product.priceRange.minVariantPrice.amount) } RUB` }</h3>
           <div className={ styles.description } dangerouslySetInnerHTML={{ __html: product.descriptionHtml }} />
           <div className={ styles.action }>
             <QuantitySelector
