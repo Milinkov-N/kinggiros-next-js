@@ -27,7 +27,7 @@ export default function OrderSummary({ orderDetails }) {
         </table>
       </div>
       <Button
-      className={ styles.checkoutBtn }
+        className={ styles.checkoutBtn }
         href={ orderDetails?.checkoutUrl || '/' }
         variant='primary'
         label='Оформить заказ'
