@@ -53,13 +53,13 @@ export default function useProduct(product, styles) {
   const handleAddToCart = (productId, quantity) => {
     setItems(items => {
       let sameItemindex
-      const isSameItem = items.find((el, index) => {
+      const sameItem = items.find((el, index) => {
         if (el.id === productId) sameItemindex = index
 
         return el.id === productId
       })
 
-      if (!isSameItem) return [...items, {
+      if (!sameItem) return [...items, {
         ...product,
         amount: quantity ? quantity : 1
       }]
@@ -68,7 +68,7 @@ export default function useProduct(product, styles) {
 
       return [...newArr, {
         ...product,
-        amount: quantity ? quantity : items[sameItemindex].amount++
+        amount: quantity ? sameItem.amount + quantity : items[sameItemindex].amount++
       }]
     })
     
