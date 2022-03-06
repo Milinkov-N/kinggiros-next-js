@@ -5,50 +5,12 @@ import Container from './layout/Container'
 import Button from './ui/Button'
 import useNavContext from '../contexts/NavContext'
 import OpenCart from './Cart/OpenCart'
+import Dropdown from './ui/Dropdown'
+import { COLLECTIONS } from '../consts'
 
 import styles from './style_modules/nav.module.css'
 
-const LINKS = [
-  {
-    name: 'Шаурма',
-    href: '/#shaurma'
-  },
-  {
-    name: 'Пицца',
-    href: '/#pizza'
-  },
-  {
-    name: 'Бургеры',
-    href: '/#burgers'
-  },
-  {
-    name: 'Чебуреки',
-    href: '/#chebureki'
-  },
-  {
-    name: 'Напитки',
-    href: '/#beverages'
-  },
-  {
-    name: 'Закуски',
-    href: '/#snacks'
-  },
-  {
-    name: 'Добавки',
-    href: '/#addons'
-  },
-  {
-    name: 'Вкусняшки',
-    href: '/#tasties'
-  },
-  {
-    name: 'Сладкое',
-    href: '/sweets'
-  },
-  {
-    name: 'Комбо',
-    href: '/combo'
-  },
+const otherPagesLinks = [
   {
     name: 'Работа',
     href: '/work'
@@ -89,6 +51,7 @@ const CloseNav = ({ className, children, includeIcon,  href }) => {
 
 export default function Nav() {
   const { opened } = useNavContext()
+  const collectionBreakpoint = 8
   
   return (
     <nav 
@@ -100,21 +63,51 @@ export default function Nav() {
       }}
     >
       <Container className={ styles.container }>
-        <ul className={ styles.navigationList }>{ 
-          LINKS.map(link => {
-            return (
-              <li key={ link.name }>
-                <CloseNav
-                  className={ styles.link }
-                  href={ link.href }
-                  includeIcon={ false }
-                >
-                  { link.name }
-                </CloseNav>
-              </li>
-            )
-          })
-        }</ul>
+        <ul className={ styles.navigationList }>
+          { COLLECTIONS.map((collection, index) => {
+            while (index < collectionBreakpoint) {
+              return (
+                <li key={ collection.name }>
+                  <CloseNav
+                    className={ styles.link }
+                    href={ collection.handle }
+                    includeIcon={ false }
+                  >
+                    { collection.name }
+                  </CloseNav>
+                </li>
+              )
+            }
+          })}
+
+          <li>
+            <Dropdown>{
+              COLLECTIONS.map((collection, index) => {
+                if (index >= collectionBreakpoint) {
+                  return (
+                    <Dropdown.Item
+                      key={ collection.handle }
+                      href={ collection.handle }
+                      label={ collection.name }
+                    />
+                  )
+                }
+              })
+            }</Dropdown>
+          </li>
+
+          { otherPagesLinks.map(link => (
+            <li key={ link.name }>
+              <CloseNav
+                className={ styles.link }
+                href={ link.href }
+                includeIcon={ false }
+              >
+                { link.name }
+              </CloseNav>
+            </li>
+          )) }
+        </ul>
         <OpenCart className={ styles.cart } />
       </Container>
       <CloseNav className={ styles.closeNav } />

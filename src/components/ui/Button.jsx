@@ -10,7 +10,8 @@ export default function Button({
   disabled,
   glowing,
   label,
-  children
+  children,
+  ...all
 }) {
   let btnClass = []
   const variantSelector = variant ? `btn-${variant}` : 'btn-primary'
@@ -25,12 +26,17 @@ export default function Button({
 
   const AsLink = () => (
     <Link href={ href || '/' }>
-      <a className={ `btn ${btnClass}` }>{ label || children }</a>
+      <a className={ `btn ${btnClass}` } {...all}>{ label || children }</a>
     </Link>
   )
 
   const AsButton = () => (
-    <button className={ `btn ${ btnClass }` } onClick={ onClick } disabled={ disabled }>
+    <button
+      className={ `btn ${ btnClass }` }
+      onClick={ onClick }
+      disabled={ disabled }
+      {...all}
+    >
       { label || children }
     </button>
   )

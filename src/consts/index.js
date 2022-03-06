@@ -1,57 +1,57 @@
 export const COLLECTIONS = [
   {
     name: 'Шаурма',
-    handle: 'shaurma',
+    handle: '/#shaurma',
     tag: 'shaurma'
   },
   {
     name: 'Пицца',
-    handle: 'pizza',
+    handle: '/#pizza',
     tag: 'pizza'
   },
   {
     name: 'Бургеры',
-    handle: 'burgers',
+    handle: '/#burgers',
     tag: 'burger'
   },
   {
     name: 'Чебуреки',
-    handle: 'chebureki',
+    handle: '/#chebureki',
     tag: 'cheburek'
   },
   {
     name: 'Напитки',
-    handle: 'beverages',
+    handle: '/#beverages',
     tag: 'beverage'
   },
   {
     name: 'Закуски',
-    handle: 'snacks',
+    handle: '/#snacks',
     tag: 'snack'
   },
   {
     name: 'Добавки',
-    handle: 'addons',
+    handle: '/#addons',
     tag: 'addon'
   },
   {
     name: 'Сладкое',
-    handle: 'sweets',
+    handle: '/#sweets',
     tag: 'sweet'
   },
   {
     name: 'Комбо',
-    handle: 'combo',
+    handle: '/#combo',
     tag: 'combo'
   },
   {
     name: 'Суши, маки, роллы',
-    handle: 'sushi_and_rolls',
+    handle: '/#sushi_and_rolls',
     tag: 'sushi_and_rolls'
   },
   {
     name: 'Суши-сеты',
-    handle: 'sushi_sets',
+    handle: '/#sushi_sets',
     tag: 'sushi_set'
   },
 ]
