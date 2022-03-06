@@ -1,9 +1,10 @@
-import styles from '../../styles/aboutus.module.css'
-import Container from '../../components/Container'
-import Layout from '../../components/Layout'
+import Container from '../../src/components/layout/Container'
+import Layout from '../../src/components/layout/Layout'
 import Logo from '../../public/logo_2022.png'
 import shaurmaImage from '../../public/shaurmaC.png'
 import hotdogImage from '../../public/hot-dogC.png'
+
+import styles from '../../styles/aboutus.module.css'
 
 export default function AboutUsPage() {
   return (

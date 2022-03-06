@@ -1,9 +1,9 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import Button from '../../components/ui/Button'
+import Button from './ui/Button'
 import useProduct from '../hooks/useProduct'
 
-import styles from '../../components/style_modules/product.module.css'
+import styles from './style_modules/product.module.css'
 
 export default function Product({ data }) {
   const {

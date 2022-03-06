@@ -1,18 +1,19 @@
 import Link from 'next/link'
-import styles from './originalheader.module.css'
-import logoImg from '../../public/logo_2022.png'
-import Container from '../Container'
-import Button from '../ui/Button'
-import OpenCart from '../OpenCart'
-import { OpenNav } from '../Header'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPhoneAlt } from '@fortawesome/free-solid-svg-icons'
+
+import logoImg from '../../../public/logo_2022.png'
+import Container from './Container'
+import Button from '../ui/Button'
+import OpenCart from '../Cart/OpenCart'
+
+import styles from '../style_modules/header.module.css'
 
 export default function OriginalHeader() {
   return (
     <header  className={ styles.header }>
       <Container className={ styles.container }>
-        <OpenNav className={ styles.openNav } />
+        {/* <OpenNav className={ styles.openNav } /> */}
 
         <div className={ styles.title }>
           <div>

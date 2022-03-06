@@ -1,9 +1,11 @@
-import styles from './style_modules/cartlist.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes } from '@fortawesome/free-solid-svg-icons'
-import QuantitySelector from './ui/QuantitySelector'
-import { useCartItems } from '../src/contexts/CartContext'
-import useCartItem from '../hooks/useCartItem'
+
+import QuantitySelector from '../ui/QuantitySelector'
+import { useCartItems } from '../../contexts/CartContext'
+import useCartItem from '../../hooks/useCartItem'
+
+import styles from '../style_modules/cartlist.module.css'
 
 export const CartItem = ({ item }) => {
   const {

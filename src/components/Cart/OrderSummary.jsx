@@ -1,6 +1,7 @@
-import styles from './style_modules/ordersummary.module.css'
-import Button from './ui/Button'
-import { useCartState } from '../src/contexts/CartContext'
+import Button from '../ui/Button'
+import { useCartState } from '../../contexts/CartContext'
+
+import styles from '../style_modules/ordersummary.module.css'
 
 export default function OrderSummary({ orderDetails }) {
   const state = useCartState()

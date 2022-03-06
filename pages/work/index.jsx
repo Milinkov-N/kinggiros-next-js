@@ -1,8 +1,9 @@
-import styles from '../../styles/contactus.module.css'
-import Layout from '../../components/Layout'
-import Container from '../../components/Container'
-import Button from '../../components/ui/Button'
+import Layout from '../../src/components/layout/Layout'
+import Container from '../../src/components/layout/Container'
+import Button from '../../src/components/ui/Button'
 import illustration from '../../public/work.svg'
+
+import styles from '../../styles/contactus.module.css'
 
 export default function WorkPage() {
   return (

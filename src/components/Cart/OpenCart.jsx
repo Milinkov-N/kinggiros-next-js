@@ -1,8 +1,9 @@
-import Button from './ui/Button'
-import useNavContext from '../contexts/NavContext'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
-import { useCart } from '../src/contexts/CartContext'
+
+import Button from '../ui/Button'
+import useNavContext from '../../contexts/NavContext'
+import { useCart } from '../../contexts/CartContext'
 
 export default function OpenCart({ className }) {
   const [state, dispatch] = useCart()

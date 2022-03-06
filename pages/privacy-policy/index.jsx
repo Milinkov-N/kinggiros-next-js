@@ -1,5 +1,6 @@
-import Layout from '../../components/Layout'
-import Container from '../../components/Container'
+import Layout from '../../src/components/layout/Layout'
+import Container from '../../src/components/layout/Container'
+
 import styles from '../../styles/privacypage.module.css'
 
 export default function PrivacyPolicy() {

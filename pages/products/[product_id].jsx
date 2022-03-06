@@ -1,10 +1,11 @@
-import Layout from '../../components/Layout'
-import Container from '../../components/Container'
-import styles from '../../styles/productpage.module.css'
-import Button from '../../components/ui/Button'
-import QuantitySelector from '../../components/ui/QuantitySelector'
-import { getSingleProduct, recursiveCatalog } from '../../utils'
+import Layout from '../../src/components/layout/Layout'
+import Container from '../../src/components/layout/Container'
+import Button from '../../src/components/ui/Button'
+import QuantitySelector from '../../src/components/ui/QuantitySelector'
+import { getSingleProduct, recursiveCatalog } from '../../src/utils'
 import useProduct from '../../src/hooks/useProduct'
+
+import styles from '../../styles/productpage.module.css'
 
 export default function ProductPage({ product }) {
   const {

@@ -1,11 +1,13 @@
-import styles from '../../styles/contactus.module.css'
-import Layout from '../../components/Layout'
-import Container from '../../components/Container'
-import Button from '../../components/ui/Button'
-import Stack from '../../components/layout/Stack'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLocationArrow, faPhoneAlt, faEnvelope } from '@fortawesome/free-solid-svg-icons'
+
+import Layout from '../../src/components/layout/Layout'
+import Container from '../../src/components/layout/Container'
+import Button from '../../src/components/ui/Button'
+import Stack from '../../src/components/layout/Stack'
 import illustration from '../../public/about-us.svg'
+
+import styles from '../../styles/contactus.module.css'
 
 export default function ContactUsPage() {
   return (

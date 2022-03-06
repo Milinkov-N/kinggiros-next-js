@@ -1,14 +1,14 @@
-import styles from './style_modules/footer.module.css'
-import Logo from '../public/logo_2022.png'
-import Container from '../components/Container'
-import Stack from './layout/Stack'
+import Link from 'next/link'
 import Image from 'next/image'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPhoneAlt, faLocationArrow, faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import { faVk, faInstagram, faTelegramPlane } from '@fortawesome/free-brands-svg-icons'
-import Link from 'next/link'
 
+import Logo from '../../../public/logo_2022.png'
+import Container from './Container'
+import Stack from './Stack'
 
+import styles from '../style_modules/footer.module.css'
 
 export default function Footer() {
   const logoWidth = 120

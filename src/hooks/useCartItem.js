@@ -1,5 +1,5 @@
-import { useCartItems } from '../src/contexts/CartContext'
-import { useCartDispatch } from '../src/contexts/CartContext'
+import { useCartItems } from '../contexts/CartContext'
+import { useCartDispatch } from '../contexts/CartContext'
 
 export default function useCartItem(item) {
   const [, setItems] = useCartItems()

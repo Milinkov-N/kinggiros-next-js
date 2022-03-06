@@ -1,8 +1,9 @@
-import styles from './style_modules/cartmodal.module.css'
 import OrderSummary from './OrderSummary'
 import CartList from './CartList'
-import Button from './ui/Button'
-import { useCart } from '../src/contexts/CartContext' 
+import Button from '../ui/Button'
+import { useCart } from '../../contexts/CartContext'
+
+import styles from '../style_modules/cartmodal.module.css'
 
 export default function CartModal() {
   const [state, dispatch] = useCart()

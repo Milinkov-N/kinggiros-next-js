@@ -1,16 +1,16 @@
-import { NavProvider } from '../contexts/NavContext'
-import styles from './style_modules/layout.module.css'
-// import { Header } from './Header'
-import { OriginalHeader } from './archive/originalHeader'
-import Nav from './Nav'
+import { NavProvider } from '../../contexts/NavContext'
+import Header from './Header'
+import Nav from '../Nav'
 import Footer from './Footer'
-import CartModal from './CartModal'
+import CartModal from '../Cart/CartModal'
+
+import styles from '../style_modules/layout.module.css'
 
 export default function Layout({ children }) {
   return (
     <div className={ styles.layout }>
       <NavProvider>
-        <OriginalHeader />
+        <Header />
         <Nav />
       </NavProvider>
       <CartModal />

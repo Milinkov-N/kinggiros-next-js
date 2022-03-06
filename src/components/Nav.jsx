@@ -1,10 +1,12 @@
-import styles from './style_modules/nav.module.css'
-import Container from './Container'
-import Button from './ui/Button'
-import useNavContext from '../contexts/NavContext'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes } from '@fortawesome/free-solid-svg-icons'
-import OpenCart from './OpenCart'
+
+import Container from './layout/Container'
+import Button from './ui/Button'
+import useNavContext from '../contexts/NavContext'
+import OpenCart from './Cart/OpenCart'
+
+import styles from './style_modules/nav.module.css'
 
 const LINKS = [
   {
