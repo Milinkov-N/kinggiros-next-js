@@ -18,9 +18,10 @@ export default function Home({ products }) {
         {
           COLLECTIONS.map(collection => (
             <CollectionList
+              key={ collection.handle }
               products={ products }
               title={ collection.name }
-              sortBy={{ tag: collection.handle }}
+              sortBy={{ tag: collection.tag }}
             />
           ))
         }

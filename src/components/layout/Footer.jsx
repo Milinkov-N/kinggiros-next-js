@@ -19,7 +19,12 @@ export default function Footer() {
       <Container>
         <Stack className={ styles.main } justify='space-between' gap='lg'>
           <Stack direction='col' align='center' gap='sm'>
-            <Image src={ Logo } width={ logoWidth } height={ logoHeight } />
+            <Image
+              src={ Logo }
+              width={ logoWidth }
+              height={ logoHeight }
+              alt='logo'
+            />
             <Stack className={ styles.socials } justify='space-between'>
               <Link href='/'>
                 <a>
