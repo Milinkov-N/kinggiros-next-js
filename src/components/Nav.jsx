@@ -70,7 +70,7 @@ export default function Nav() {
                 <li key={ collection.name }>
                   <CloseNav
                     className={ styles.link }
-                    href={ collection.handle }
+                    href={ `/#${collection.handle}` }
                     includeIcon={ false }
                   >
                     { collection.name }
@@ -87,7 +87,7 @@ export default function Nav() {
                   return (
                     <Dropdown.Item
                       key={ collection.handle }
-                      href={ collection.handle }
+                      href={ `/#${collection.handle}` }
                       label={ collection.name }
                     />
                   )

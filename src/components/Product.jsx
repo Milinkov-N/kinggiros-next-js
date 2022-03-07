@@ -1,5 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
+
+import LogoImg from '../../public/logo_2022.png'
 import Button from './ui/Button'
 import useProduct from '../hooks/useProduct'
 
@@ -21,7 +23,7 @@ export default function Product({ data }) {
             <Image 
               priority
               className={ styles.img }
-              src={ `${ product.images?.edges[0]?.node.transformedSrc || '/' }` }
+              src={ `${ product.images?.edges[0]?.node.transformedSrc || LogoImg.src }` }
               alt={ product.title }
               layout='fill'
               objectFit='contain' 

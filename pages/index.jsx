@@ -22,6 +22,7 @@ export default function Home({ products }) {
               products={ products }
               title={ collection.name }
               sortBy={{ tag: collection.tag }}
+              handle={ collection.handle }
             />
           ))
         }
