@@ -13,8 +13,6 @@ export default function OriginalHeader() {
   return (
     <header  className={ styles.header }>
       <Container className={ styles.container }>
-        {/* <OpenNav className={ styles.openNav } /> */}
-
         <div className={ styles.title }>
           <div>
             <h2>Вкусная еда</h2>

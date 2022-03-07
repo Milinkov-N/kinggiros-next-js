@@ -6,6 +6,7 @@ import { useCartItems } from '../../contexts/CartContext'
 import useCartItem from '../../hooks/useCartItem'
 
 import styles from '../style_modules/cartlist.module.css'
+import Image from 'next/image'
 
 export const CartItem = ({ item }) => {
   const {
@@ -17,7 +18,16 @@ export const CartItem = ({ item }) => {
 
   return (
     <div className={ styles.item }>
-      <img src={ item.img } alt="item image" />
+      <div className={ styles.imgWrapper }>
+        <Image
+          priority
+          // className={ styles.img }
+          src={ item.img }
+          alt={ item.title }
+          layout='fill'
+          objectFit='contain' 
+        />
+      </div>
       <div className={ styles.itemInfo }>
         <h3 className={ styles.itemName }>{ item.title }</h3>
         <div className={ styles.flex }>

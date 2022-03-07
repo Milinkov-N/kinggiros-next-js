@@ -20,9 +20,8 @@ export default function Product({ data }) {
       <Link href={ `/products/${ product.handle }` }>
         <a className={ styles.link }>
           <div className={ styles.imgWrapper }>
-            <Image 
+            <Image
               priority
-              className={ styles.img }
               src={ `${ product.images?.edges[0]?.node.transformedSrc || LogoImg.src }` }
               alt={ product.title }
               layout='fill'
