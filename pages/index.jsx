@@ -10,21 +10,25 @@ export default function Home({ products }) {
   return (
     <>
       <Head>
-        <title>King Giros</title>
+        <title>King Giros | Главная</title>
         <link rel="shortcut icon" href={ logo.src } type="image/x-icon" />
       </Head>
       <Layout>
         <Hero />
         {
-          COLLECTIONS.map(collection => (
-            <CollectionList
-              key={ collection.handle }
-              products={ products }
-              title={ collection.name }
-              sortBy={{ tag: collection.tag }}
-              handle={ collection.handle }
-            />
-          ))
+          COLLECTIONS.map(collection => {
+            if (!collection.isPage) {
+              return (
+                <CollectionList
+                  key={ collection.handle }
+                  products={ products }
+                  title={ collection.name }
+                  sortBy={{ tag: collection.tag }}
+                  handle={ collection.handle }
+                />
+              )
+            }
+          })
         }
       </Layout>
     </>
