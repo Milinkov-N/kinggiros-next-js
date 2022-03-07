@@ -1,38 +1,29 @@
-import Head from 'next/head'
 import Layout from '../src/components/layout/Layout'
 import Hero from '../src/components/Hero'
-import logo from '../public/logo_icon.png'
 import CollectionList from '../src/components/CollectionList'
 import { storefront } from '../src/utils'
 import { COLLECTIONS } from '../src/consts'
 
 export default function Home({ products }) {
   return (
-    <>
-      <Head>
-        <title>King Giros | Главная</title>
-        <link rel="shortcut icon" href={ logo.src } type="image/x-icon" />
-      </Head>
-      <Layout>
-        <Hero />
-        {
-          COLLECTIONS.map(collection => {
-            if (!collection.isPage) {
-              return (
-                <CollectionList
-                  key={ collection.handle }
-                  products={ products }
-                  title={ collection.name }
-                  sortBy={{ tag: collection.tag }}
-                  handle={ collection.handle }
-                />
-              )
-            }
-          })
-        }
-      </Layout>
-    </>
-    
+    <Layout>
+      <Hero />
+      {
+        COLLECTIONS.map(collection => {
+          if (!collection.isPage) {
+            return (
+              <CollectionList
+                key={ collection.handle }
+                products={ products }
+                title={ collection.name }
+                sortBy={{ tag: collection.tag }}
+                handle={ collection.handle }
+              />
+            )
+          }
+        })
+      }
+    </Layout>
   )
 }
 
