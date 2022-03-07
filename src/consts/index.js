@@ -18,16 +18,10 @@ export const COLLECTIONS = [
     isPage: false
   },
   {
-    name: 'Суши, маки, роллы',
-    handle: 'sushi_and_rolls',
-    tag: 'sushi_and_rolls',
-    isPage: false
-  },
-  {
-    name: 'Суши-сеты',
-    handle: 'sushi_sets',
-    tag: 'sushi_set',
-    isPage: false
+    name: 'Суши',
+    handle: 'sushi',
+    tag: 'sushi',
+    isPage: true
   },
   {
     name: 'Чебуреки',

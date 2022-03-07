@@ -65,12 +65,14 @@ export default function Nav() {
       <Container className={ styles.container }>
         <ul className={ styles.navigationList }>
           { COLLECTIONS.map((collection, index) => {
+            const href = collection.isPage ? `/${collection.handle}` : `/#${collection.handle}`
+
             while (index < collectionBreakpoint) {
               return (
                 <li key={ collection.name }>
                   <CloseNav
                     className={ styles.link }
-                    href={ `/#${collection.handle}` }
+                    href={ href }
                     includeIcon={ false }
                   >
                     { collection.name }
@@ -84,10 +86,12 @@ export default function Nav() {
             <Dropdown>{
               COLLECTIONS.map((collection, index) => {
                 if (index >= collectionBreakpoint) {
+                  const href = collection.isPage ? `/${collection.handle}` : `/#${collection.handle}`
+
                   return (
                     <Dropdown.Item
                       key={ collection.handle }
-                      href={ `/#${collection.handle}` }
+                      href={ href }
                       label={ collection.name }
                     />
                   )
