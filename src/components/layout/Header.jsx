@@ -38,11 +38,11 @@ export default function OriginalHeader() {
 
         <div className={ styles.controls }>
           <OpenCart className={ styles.cart } />
-          <Button
+          {/* <Button
             variant='secondary'
             label='Войти'
             size='small'
-          />
+          /> */}
         </div>
       </Container>
     </header>
