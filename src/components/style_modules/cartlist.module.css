@@ -1,13 +1,13 @@
 .itemsList {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(6, 100px);
+  /* grid-template-rows: repeat(6, 100px); */
   gap: 1rem;
-  margin-bottom: .5rem;
-  overflow: scroll;
+  margin-bottom: 2rem;
+  /* overflow: scroll; */
 }
 
-.itemsList::-webkit-scrollbar {
+/* .itemsList::-webkit-scrollbar {
   width: 4px;
   padding: 0 .5px;
 }
@@ -19,7 +19,7 @@
 
 .itemsList::-webkit-scrollbar-corner {
   visibility: hidden;
-}
+} */
 
 .item {
   position: relative;
