@@ -62,7 +62,7 @@ export default function CartModal() {
                             src={ product.node.images?.edges[0]?.node?.transformedSrc || LogoImg.src }
                             alt={ product.node.images?.edges[0]?.node?.altText }
                             layout='fill'
-                            objectFit='contain' 
+                            objectFit='contain'
                           />
                         </div>
                         <div>

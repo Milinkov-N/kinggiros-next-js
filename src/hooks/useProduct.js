@@ -68,7 +68,7 @@ export default function useProduct(product, styles) {
 
       return [...newArr, {
         ...product,
-        amount: quantity ? sameItem.amount + quantity : items[sameItemindex].amount++
+        amount: quantity ? sameItem.amount + quantity : items[sameItemindex].amount + 1
       }]
     })
     

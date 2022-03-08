@@ -85,6 +85,10 @@
   aspect-ratio: 1 / 1;
 }
 
+.imgWrapper img {
+  border-radius: 8px;
+}
+
 @media (max-width: 400px) {
   .cartModal {
     width: 100vw;
