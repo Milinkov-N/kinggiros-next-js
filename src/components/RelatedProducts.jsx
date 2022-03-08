@@ -57,9 +57,8 @@ export default function RelatedProducts() {
         {
           products.map(product => {
             return (
-              <SwiperSlide className={ styles.swiperSlide }>
+              <SwiperSlide className={ styles.swiperSlide } key={ product.node.id }>
                 <Product
-                  key={ product.node.id }
                   data={ product }
                 />
               </SwiperSlide>

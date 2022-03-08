@@ -1,4 +1,6 @@
 import Image from 'next/image'
+import { useState, useEffect } from 'react'
+import { storefront } from '../../utils'
 
 import OrderSummary from './OrderSummary'
 import CartList from './CartList'
@@ -13,6 +15,19 @@ import styles from '../style_modules/cartmodal.module.css'
 
 export default function CartModal() {
   const [state, dispatch] = useCart()
+  const [products, setProducts] = useState([])
+
+  useEffect(() =>{
+    async function getProducts() {
+      const { data } = await storefront(query)
+
+      console.log(data);
+
+      setProducts(data.collection.products.edges)
+    }
+
+    getProducts()
+  },[])
 
   const handler = () => {
     document.body.classList.remove('scroll-lock')
@@ -36,74 +51,29 @@ export default function CartModal() {
               freeMode={ true }
               modules={[FreeMode]}
             >
-              <SwiperSlide className={ styles.swiperSlide }>
-                <div className={ styles.addToOrderItem }>
-                  <div className={ styles.imgWrapper }>
-                    <Image
-                      priority
-                      src={ LogoImg.src }
-                      alt={ 'img' }
-                      layout='fill'
-                      objectFit='contain' 
-                    />
-                  </div>
-                  <div>
-                    <h4>Кока-кола</h4>
-                    <span>200 RUB</span>
-                  </div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide className={ styles.swiperSlide }>
-                <div className={ styles.addToOrderItem }>
-                  <div className={ styles.imgWrapper }>
-                    <Image
-                      priority
-                      src={ LogoImg.src }
-                      alt={ 'img' }
-                      layout='fill'
-                      objectFit='contain' 
-                    />
-                  </div>
-                  <div>
-                    <h4>Фанта</h4>
-                    <span>200 RUB</span>
-                  </div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide className={ styles.swiperSlide }>
-                <div className={ styles.addToOrderItem }>
-                  <div className={ styles.imgWrapper }>
-                    <Image
-                      priority
-                      src={ LogoImg.src }
-                      alt={ 'img' }
-                      layout='fill'
-                      objectFit='contain' 
-                    />
-                  </div>
-                  <div>
-                    <h4 className='text'>Картошка фри</h4>
-                    <span>200 RUB</span>
-                  </div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide className={ styles.swiperSlide }>
-                <div className={ styles.addToOrderItem }>
-                  <div className={ styles.imgWrapper }>
-                    <Image
-                      priority
-                      src={ LogoImg.src }
-                      alt={ 'img' }
-                      layout='fill'
-                      objectFit='contain' 
-                    />
-                  </div>
-                  <div>
-                    <h4>Соус</h4>
-                    <span>200 RUB</span>
-                  </div>
-                </div>
-              </SwiperSlide>
+              {
+                products.map(product => {
+                  return (
+                    <SwiperSlide className={ styles.swiperSlide } key={ product.node.id }>
+                      <div className={ styles.addToOrderItem }>
+                        <div className={ styles.imgWrapper }>
+                          <Image
+                            priority
+                            src={ product.node.images?.edges[0]?.node?.transformedSrc || LogoImg.src }
+                            alt={ product.node.images?.edges[0]?.node?.altText }
+                            layout='fill'
+                            objectFit='contain' 
+                          />
+                        </div>
+                        <div>
+                          <h4>{ product.node.title }</h4>
+                          <span>{ Math.floor(product.node.priceRange?.minVariantPrice?.amount) } RUB</span>
+                        </div>
+                      </div>
+                    </SwiperSlide>
+                  )
+                })
+              }
             </Swiper>
           </div>
         </div>
@@ -126,3 +96,37 @@ function CartModalHeader({ handler }) {
     </div>
   )
 }
+
+const query = `
+  query relatedProducts {
+    collection(handle: "cart-offer") {
+      handle
+      id
+      descriptionHtml
+      products(first: 250) {
+        edges {
+          node {
+            id
+            handle
+            title
+            description
+            images(first: 1) {
+              edges {
+                node {
+                  transformedSrc
+                  altText
+                }
+              }
+            }
+            tags
+            priceRange {
+              minVariantPrice {
+                amount
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`
