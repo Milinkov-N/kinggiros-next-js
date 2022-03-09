@@ -8,12 +8,13 @@ import useProduct from '../hooks/useProduct'
 import styles from './style_modules/product.module.css'
 
 export default function Product({ data }) {
+  const product = data.node
+  const price = Math.floor(product.priceRange.minVariantPrice.amount)
+
   const {
-    product,
-    price,
     setTags,
     handleAddToCart,
-  } = useProduct(data.node, styles)
+  } = useProduct()
 
   return (
     <div className={ styles.product }>
@@ -44,7 +45,7 @@ export default function Product({ data }) {
         <Button
           variant='primary'
           label='В корзину'
-          onClick={ () => handleAddToCart(product.id) }
+          onClick={ () => handleAddToCart(product) }
         />
       </div>
     </div>

@@ -14,7 +14,7 @@ export default function ProductPage({ product }) {
     setTags,
     quantity,
     setQuantity
-  } = useProduct(product, styles)
+  } = useProduct()
 
   return (
     <Layout>
@@ -43,7 +43,7 @@ export default function ProductPage({ product }) {
                 size='medium'
                 label='В корзину'
                 onClick={ () => {
-                  handleAddToCart(product.id, quantity)
+                  handleAddToCart(product, quantity)
                   setQuantity(1)
                 }}
               />

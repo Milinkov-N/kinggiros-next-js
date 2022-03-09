@@ -312,6 +312,18 @@ input[type=number]::-webkit-outer-spin-button {
   margin-left: .5em;
 }
 
+.spicy {
+  color: #ff192d;
+  font-size: 1rem !important;
+  margin-right: .25rem;
+}
+
+.vegetarian {
+  color: #00d440;
+  font-size: 1rem !important;
+  margin-right: .25rem;
+}
+
 @media (max-width: 500px) {
   .heading-1 {
     font-size: calc(1rem + 5vw);

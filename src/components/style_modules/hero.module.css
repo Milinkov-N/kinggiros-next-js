@@ -45,7 +45,8 @@
   color: var(--clr-neutral-900);
 }
 
-.hero .container > button {
+.hero .container > a {
+  display: inline-block;
   margin: 0 auto;
   margin-top: 2rem;
 }

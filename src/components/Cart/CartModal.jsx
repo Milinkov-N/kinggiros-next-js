@@ -12,10 +12,12 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { FreeMode, } from 'swiper'
 import 'swiper/css'
 import styles from '../style_modules/cartmodal.module.css'
+import useProduct from '../../hooks/useProduct'
 
 export default function CartModal() {
   const [state, dispatch] = useCart()
   const [products, setProducts] = useState([])
+  // const { handleAddToCart } = useProduct()
 
   useEffect(() =>{
     async function getProducts() {

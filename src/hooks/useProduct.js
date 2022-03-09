@@ -5,7 +5,7 @@ import { faLeaf, faPepperHot } from '@fortawesome/free-solid-svg-icons'
 import { useCartItems } from '../contexts/CartContext'
 import { useCartDispatch } from '../contexts/CartContext'
 
-export default function useProduct(product, styles) {
+export default function useProduct() {
   const [, setItems] = useCartItems()
   const dispatch = useCartDispatch()
 
@@ -17,8 +17,6 @@ export default function useProduct(product, styles) {
   //   return quantity - 1
   // })
 
-  const price = Math.floor(product.priceRange.minVariantPrice.amount)
-
   const setTags = (tags) => {
     const output = []
 
@@ -28,7 +26,7 @@ export default function useProduct(product, styles) {
           output.push(
             <FontAwesomeIcon
               key={ tag }
-              className={ styles.spicy }
+              className='spicy'
               icon={ faPepperHot }
             />
           )
@@ -38,7 +36,7 @@ export default function useProduct(product, styles) {
           output.push(
             <FontAwesomeIcon
               key={ tag }
-              className={ styles.vegetarian }
+              className='vegetarian'
               icon={ faLeaf }
             />
           )
@@ -50,13 +48,15 @@ export default function useProduct(product, styles) {
     return output
   }
 
-  const handleAddToCart = (productId, quantity) => {
+  const handleAddToCart = (product, quantity) => {
+    const price = Math.floor(product.priceRange.minVariantPrice.amount)
+
     setItems(items => {
       let sameItemindex
       const sameItem = items.find((el, index) => {
-        if (el.id === productId) sameItemindex = index
+        if (el.id === product.id) sameItemindex = index
 
-        return el.id === productId
+        return el.id === product.id
       })
 
       if (!sameItem) return [...items, {
@@ -64,7 +64,7 @@ export default function useProduct(product, styles) {
         amount: quantity ? quantity : 1
       }]
 
-      const newArr = items.filter(el => el.id !== productId)
+      const newArr = items.filter(el => el.id !== product.id)
 
       return [...newArr, {
         ...product,
@@ -79,8 +79,6 @@ export default function useProduct(product, styles) {
   }
 
   return {
-    product,
-    price,
     setTags,
     handleAddToCart,
     quantity,

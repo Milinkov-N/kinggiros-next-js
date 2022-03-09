@@ -14,8 +14,11 @@
 .imgWrapper {
   position: relative;
   width: 100%;
-  height: 300px;
+  height: auto;
+  aspect-ratio: 1 / 1;
   transition: .2s transform ease;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 .header {
@@ -39,23 +42,6 @@
 .title i {
   font-size: 1rem;
   margin-right: 0.5rem;
-}
-
-.tags {
-  display: flex;
-  gap: .5rem;
-}
-
-.spicy {
-  color: #ff192d;
-  font-size: 1rem;
-  margin-right: .25rem;
-}
-
-.vegetarian {
-  color: #00d440;
-  font-size: 1rem;
-  margin-right: .25rem;
 }
 
 .description {
