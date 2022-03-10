@@ -83,6 +83,16 @@
   width: auto;
   height: 60px;
   aspect-ratio: 1 / 1;
+  cursor: pointer;
+}
+
+.orderOfferItemTitle {
+  transition: .2s color ease;
+  cursor: pointer;
+}
+
+.orderOfferItemTitle:hover {
+  color: var(--clr-secondary-400);
 }
 
 .imgWrapper img {

@@ -17,7 +17,7 @@ import useProduct from '../../hooks/useProduct'
 export default function CartModal() {
   const [state, dispatch] = useCart()
   const [products, setProducts] = useState([])
-  // const { handleAddToCart } = useProduct()
+  const { handleAddToCart } = useProduct()
 
   useEffect(() =>{
     async function getProducts() {
@@ -58,7 +58,7 @@ export default function CartModal() {
                   return (
                     <SwiperSlide className={ styles.swiperSlide } key={ product.node.id }>
                       <div className={ styles.addToOrderItem }>
-                        <div className={ styles.imgWrapper }>
+                        <div className={ styles.imgWrapper } onClick={ () => handleAddToCart(product.node) }>
                           <Image
                             priority
                             src={ product.node.images?.edges[0]?.node?.transformedSrc || LogoImg.src }
@@ -68,7 +68,7 @@ export default function CartModal() {
                           />
                         </div>
                         <div>
-                          <h4>{ product.node.title }</h4>
+                          <h4 className={ styles.orderOfferItemTitle } onClick={ () => handleAddToCart(product.node) }>{ product.node.title }</h4>
                           <span>{ Math.floor(product.node.priceRange?.minVariantPrice?.amount) } RUB</span>
                         </div>
                       </div>
