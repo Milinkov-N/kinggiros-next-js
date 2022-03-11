@@ -1,14 +1,14 @@
 import styles from '../style_modules/Form.module.css'
 
-export default function Form({ className, children }) {
+export default function Form({ className, children, onSubmit }) {
   return (
-    <form className={ className ? className : '' }>
+    <form className={ className ? className : '' } onSubmit={ onSubmit }>
       { children }
     </form>
   )
 }
 
-function Input({ className, name, placeholder, type, label, required }) {
+function Input({ className, name, placeholder, type, label, required, onSelect }) {
   return (
     <div className={ `${ styles.inputGroup } ${ className ? className : '' }` }>
       <label
@@ -23,6 +23,7 @@ function Input({ className, name, placeholder, type, label, required }) {
         name={ name }
         placeholder={ placeholder }
         required={ required }
+        onSelect={ onSelect }
       />
     </div>
   )

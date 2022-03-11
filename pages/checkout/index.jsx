@@ -64,7 +64,30 @@ function ContactInfo() {
           required
         />
       </div>
-      
+      <h2 className='heading-3'>Оплата</h2>
+      <div className={ styles.paymentTypes }>
+        <Form.Input
+          className={ styles.paymentType }
+          name='payment_type'
+          type='radio'
+          label='Оплата на сайте'
+          required
+        />
+        <Form.Input
+          className={ styles.paymentType }
+          name='payment_type'
+          type='radio'
+          label='Оплата при получении'
+          required
+        />
+        <Form.Input
+          className={ styles.paymentType }
+          name='payment_type'
+          type='radio'
+          label='Самовывоз'
+          required
+        />
+      </div>
     </div>
    )
 }
@@ -74,12 +97,12 @@ function OrderDetails() {
   const state = useCartState()
   
   return (
-    <div>
+    <div className={ styles.orderDetails }>
       <h2 className='heading-3'>Детали заказа</h2>
-      <div>
+      <div className={ styles.orderItems }>
         {
           items.map(item => (
-            <div className={ styles.item } key={ item.id }>
+            <div className={ styles.orderItem } key={ item.id }>
               <div className={ styles.imgWrapper }>
                 <Image
                   priority
@@ -90,10 +113,8 @@ function OrderDetails() {
                 />
               </div>
               <div className={ styles.itemInfo }>
-                <h3 className={ styles.itemName }>{ item.title }</h3>
-                <div className={ styles.flex }>
-                  <span className={ styles.itemPrice }>{ Math.floor(item.priceRange.minVariantPrice.amount) * item.amount } RUB</span>
-                </div>              
+                <h3 className={ styles.itemName }>{ `${ item.title } x${ item.amount }` }</h3>
+                <span className={ styles.itemPrice }>{ Math.floor(item.priceRange.minVariantPrice.amount) * item.amount } RUB</span>             
               </div>
             </div>
           ))
@@ -118,7 +139,7 @@ function OrderDetails() {
         </table>
       </div>
       <Button
-        className={ styles.checkoutBtn }
+        className={ styles.btn }
         href={ '/checkout' }
         variant='secondary'
         label='Подтвердить заказ'
